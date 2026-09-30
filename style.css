@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;/* Faz o padding e a borda ficarem DENTRO da largura definida,
+   evitando que os elementos passem do tamanho da tela */
+}
+
+body{
+    background-color: red;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;   /* fica por cima dos outros elementos */
+    background-color: rgba(0,0,0, 0.8);
+    display: flex;
+    justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
+    padding: 20px 5%;
+    align-items: center;
+}
+header img {
+    height: 40px;
+    width: auto;
+}
+header nav a {
+    text-decoration: none;
+    font-family: 'bebas neue', sans-serif;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#topo{
+    padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
+    /* background-image: url(img/fotos-box/imagem1.1.jpg); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/fotos-box/imagem1.jpeg);
+    background-size: cover;        /* a imagem cobre a seção toda */
+    background-position: center;   /* centraliza a imagem */
+    background-repeat: no-repeat;  /* não repete a imagem */
+    height: 100vh;                 /* seção com a altura da tela inteira */
+
+    text-align: center;
+}
+#topo h1{
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
+}
+#topo a {
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    display: block; /* o link ocupa a linha inteira */
+    color: gray  ;
+    display: inline-block;
+    background-color: yellow;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+#chamada1 {
+    text-decoration: none;
+    background-color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border-style: double;
+    color: gray;
+}
+
+
+/* Tablet
+@media (max-width: 1024px) {
+     seu código aqui 
+}
+
+ Smartphone 
+@media (max-width: 480px) {
+    seu código aqui 
+} */
+
+@media screen and (max-width: 600px) {
+	
+	body {
+		background: yellow;
+	}
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header img {
+        height: 100px;
+        width: auto;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav a {
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}
