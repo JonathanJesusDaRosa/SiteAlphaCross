@@ -15,7 +15,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;   /* fica por cima dos outros elementos */
-    background-color: rgba(0,0,0, 0.8);
+    background-color: rgba(0,0,0, 0.4);
     display: flex;
     justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
     padding: 20px 5%;
