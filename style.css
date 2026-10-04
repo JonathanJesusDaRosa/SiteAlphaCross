@@ -135,15 +135,45 @@ header nav a {
 }
 #modalidades {
     padding: 100px 5%;
-    /* flex-direction: row;
-    display: flex;
-    justify-content: space-around; */
-    background-color: yellow;    
+    background-color: black;   
+}
+#modalidades a {
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    color: yellow;
+}
+#modalidades h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
 }
 #modalidades article {
     flex-direction: row;
     display: flex;
     justify-content: space-around; 
+}
+#modalidades article section {
+    margin: 20px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 40px;
+}
+#modalidades article section h3{
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    color: white;
+    padding: 5px 20px;
+}
+#modalidades article section p {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 15px;
+    color: white;
+    padding: 5px 20px;
+}
+#modalidades article section img{
+    width: 100%;
+    /* padding: 10px 10px; */
 }
 
 /* Tablet
