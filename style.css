@@ -20,6 +20,15 @@ header {
     justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
     padding: 20px 5%;
     align-items: center;
+
+    animation: header-some linear forwards;   /* animação que muda o fundo */
+    animation-timeline: scroll();             /* a animação anda conforme o scroll, não com o tempo */
+    animation-range: 0px 200px;               /* acontece entre 0 e 200px de rolagem */
+}
+@keyframes header-some {
+    to {
+        background-color: black;        /* no final, fundo 100% transparente */
+    }
 }
 header img {
     height: 40px;
@@ -32,12 +41,19 @@ header nav a {
     padding-left: 20px;
     padding-right: 20px;
 }
-
-
+#chamada1 {
+    text-decoration: none;
+    background-color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border-style: double;
+    color: gray;
+}
 #topo{
     padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
     /* background-image: url(img/fotos-box/imagem1.1.jpg); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/fotos-box/imagem1.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(img/fotos-box/imagem1.jpeg);
     background-size: cover;        /* a imagem cobre a seção toda */
     background-position: center;   /* centraliza a imagem */
     background-repeat: no-repeat;  /* não repete a imagem */
@@ -62,16 +78,73 @@ header nav a {
     padding: 10px 30px;
     border-radius: 30px;
 }
-#chamada1 {
+#sobre {
+    padding: 100px 5%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+
+}
+#sobre article a:first-child{
     text-decoration: none;
-    background-color: yellow;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5px 20px;
-    border-radius: 50px;
-    border-style: double;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    color: yellow;
+}
+#sobre article h2{
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
+}
+#sobre article p{
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
     color: gray;
 }
+#sobre article a:last-child
+{
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    display: block; /* o link ocupa a linha inteira */
+    color: gray  ;
+    display: inline-block;
+    background-color: yellow;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
 
+#sobre article {
+    width: 50%;
+    padding: 50px 50px;
+}
+#carrossel{
+    display: flex;                     /* deixa as fotos em linha */
+    overflow-x: auto;                /* cria a rolagem na horizontal */
+    scroll-snap-type: x mandatory;   /* a rolagem "gruda" em cada foto */
+}
+
+#carrossel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;  /* a imagem cobre o espaço definido, cortando o que passar */
+    flex-shrink: 0;                  /* não deixa as fotos encolherem */
+    scroll-snap-align: start;        /* cada foto para alinhada no começo */
+}
+#modalidades {
+    padding: 100px 5%;
+    /* flex-direction: row;
+    display: flex;
+    justify-content: space-around; */
+    background-color: yellow;    
+}
+#modalidades article {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around; 
+}
 
 /* Tablet
 @media (max-width: 1024px) {
