@@ -141,25 +141,17 @@ header nav a {
 }
 #modalidades {
     padding: 100px 5%;
-    background-color: black;   
-}
-#modalidades a {
-    text-decoration: none;
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 30px;
-    color: yellow;
-}
-#modalidades h2 {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 50px;
-    text-transform: uppercase;   /* deixa tudo em maiúsculo */
-    color: yellow;
+    /* flex-direction: row;
+    display: flex;
+    justify-content: space-around; */
+    background-color: yellow;    
 }
 #modalidades article {
     flex-direction: row;
     display: flex;
     justify-content: space-around; 
 }
+<<<<<<< HEAD
 #modalidades article section {
     margin: 20px;
     background-color: rgb(32, 32, 32);
@@ -207,6 +199,8 @@ header nav a {
 
 
 
+=======
+>>>>>>> parent of 16154a1 (Alteração 2 - 03/10/26)
 
 /* Tablet
 @media (max-width: 1024px) {
