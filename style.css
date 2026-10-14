@@ -72,7 +72,7 @@ header nav a {
     font-family: "Barlow Condensed", sans-serif;
     font-size: 30px;
     display: block; /* o link ocupa a linha inteira */
-    color: #000  ;
+    color: gray  ;
     display: inline-block;
     background-color: yellow;
     padding: 10px 30px;
@@ -102,12 +102,6 @@ header nav a {
     font-family: "Barlow Condensed", sans-serif;
     font-size: 20px;
     color: gray;
-    background-color: yellow;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5px 20px;
-    border-radius: 50px;
-    border-style: double;
-    color: #000;
 }
 #sobre article a:last-child
 {
@@ -141,17 +135,25 @@ header nav a {
 }
 #modalidades {
     padding: 100px 5%;
-    /* flex-direction: row;
-    display: flex;
-    justify-content: space-around; */
-    background-color: yellow;    
+    background-color: black;   
+}
+#modalidades a {
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 30px;
+    color: yellow;
+}
+#modalidades h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
 }
 #modalidades article {
     flex-direction: row;
     display: flex;
     justify-content: space-around; 
 }
-<<<<<<< HEAD
 #modalidades article section {
     margin: 20px;
     background-color: rgb(32, 32, 32);
@@ -173,34 +175,6 @@ header nav a {
     width: 100%;
     /* padding: 10px 10px; */
 }
-#sobre {
-    background-color: green;
-    font-family: "Barlow Condensed", sans-serif;
-}
-
-#sobre .somos {
-    padding: 20px 0px;
-    font-size: 35px;
-    text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
-    color: yellow;
-}
-
-#sobre h2 {
-    font-size: 45px;
-    text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
-    color: yellow;
-}
-
-
-
-
-
-=======
->>>>>>> parent of 16154a1 (Alteração 2 - 03/10/26)
 
 /* Tablet
 @media (max-width: 1024px) {
