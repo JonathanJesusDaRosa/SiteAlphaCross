@@ -6,8 +6,8 @@
 }
 
 body{
-    background-color: red;
-    margin: 0;
+    background-color: black;
+    color: white;
 }
 
 header {
@@ -15,11 +15,20 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;   /* fica por cima dos outros elementos */
-    background-color: rgba(0,0,0, 0.4);
+    background-color: rgba(0,0,0, 0.1);
     display: flex;
     justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
     padding: 20px 5%;
     align-items: center;
+
+    animation: header-some linear forwards;   /* animação que muda o fundo */
+    animation-timeline: scroll();             /* a animação anda conforme o scroll, não com o tempo */
+    animation-range: 0px 200px;               /* acontece entre 0 e 200px de rolagem */
+}
+@keyframes header-some {
+    to {
+         background-color: rgba(0,0,0, 0.9);        /* no final, fundo 100% transparente */
+    }
 }
 header img {
     height: 40px;
@@ -32,12 +41,61 @@ header nav a {
     padding-left: 20px;
     padding-right: 20px;
 }
+h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
+}
 
-
+h2 {
+    font-family: "Barlow Condensed", sans-serif;
+}
+h3 {
+    font-family: "Barlow Condensed", sans-serif;
+}
+a {
+    font-family: "Barlow Condensed", sans-serif;
+}
+p {
+    font-family: "barlow Condensed", sans-serif;
+}
+.sub {
+    text-decoration: none;
+    font-size: 30px;
+    color: yellow;
+}
+.titulo{
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: yellow;
+}
+.acao {
+   
+    background-color: yellow;
+    font-family: 'bebas neue', sans-serif;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px 20px ;
+    width: fit-content;
+    margin: 20px auto;
+    display: block;
+}
+#chamada1 {
+    text-decoration: none;
+    background-color: yellow;
+    font-size: large;
+    text-transform:capitalize;
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: black;
+}
 #topo{
     padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
     /* background-image: url(img/fotos-box/imagem1.1.jpg); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/fotos-box/imagem1.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(img/fotos-box/imagem1.jpeg);
     background-size: cover;        /* a imagem cobre a seção toda */
     background-position: center;   /* centraliza a imagem */
     background-repeat: no-repeat;  /* não repete a imagem */
@@ -45,59 +103,144 @@ header nav a {
 
     text-align: center;
 }
-#topo h1{
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 50px;
-    text-transform: uppercase;   /* deixa tudo em maiúsculo */
-    color: yellow;
-}
 #topo a {
     text-decoration: none;
-    font-family: "Barlow Condensed", sans-serif;
     font-size: 30px;
     display: block; /* o link ocupa a linha inteira */
-    color: #000  ;
+    color: gray  ;
     display: inline-block;
     background-color: yellow;
     padding: 10px 30px;
     border-radius: 30px;
 }
-#chamada1 {
-    text-decoration: none;
-    background-color: yellow;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5px 20px;
-    border-radius: 50px;
-    border-style: double;
-    color: #000;
-}
 
 #sobre {
-    background-color: green;
-    font-family: "Barlow Condensed", sans-serif;
+    padding: 100px 5%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+
+}
+#sobre article p{
+    font-size: 20px;
+    color: gray;
+}
+#sobre article a:last-child
+{
+    text-decoration: none;
+    font-size: 30px;
+    display: block; /* o link ocupa a linha inteira */
+    color: gray  ;
+    display: inline-block;
+    background-color: yellow;
+    padding: 10px 30px;
+    border-radius: 30px;
 }
 
-#sobre .somos {
-    padding: 20px 0px;
-    font-size: 35px;
-    text-transform: uppercase;
+#sobre article {
+    width: 50%;
+    padding: 50px 50px;
+}
+#carrossel{
+    display: flex;                     /* deixa as fotos em linha */
+    overflow-x: auto;                /* cria a rolagem na horizontal */
+    scroll-snap-type: x mandatory;   /* a rolagem "gruda" em cada foto */
+}
+
+#carrossel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;  /* a imagem cobre o espaço definido, cortando o que passar */
+    flex-shrink: 0;                  /* não deixa as fotos encolherem */
+    scroll-snap-align: start;        /* cada foto para alinhada no começo */
+}
+#modalidades {
+    padding: 100px 5%; 
+    background-color: black;
+    color: white;
+}
+
+#modalidades article {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around; 
+}
+#modalidades article section {
+    margin: 20px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 40px;
+}
+#modalidades article section h3{
+    font-size: 30px;
+    padding: 5px 20px;
+}
+#modalidades article section p {
+    font-size: 15px;
+    padding: 5px 20px;
+}
+#modalidades article section img{
+    width: 100%;
+}
+#planos {
+    padding: 100px 5%; 
+}
+#planos article {
+    display: flex;
+    justify-content: space-around;    
+}
+#planos article section {
+    margin: 10px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 40px;
+    flex: 1; /*Faz a section ficarem do mesmo tamanho*/
     text-align: center;
-    justify-content: center;
-    color: yellow;
 }
-
-#sobre h2 {
-    font-size: 45px;
-    text-transform: uppercase;
+#planos article section h3 {
+    font-size: 30px;
+    color: yellow;
+    padding: 5px 20px ;
+    border: 1px solid yellow;
+    border-radius: 20px;
+    margin: 20px;
+    
+}
+#planos article section a {
+    font-size: 15px;
+    padding: 5px 20px ; 
+}
+#planos article section p {
+    font-size: 15px;
+    padding: 5px 20px;
+}
+#horarios {
+    padding: 100px 5%; 
+}
+#horarios article{
+    display: flex;
+    flex-wrap:wrap;
+    
+}
+#horarios article h2{
+    width: 100%;
+    font-size: 30px;
     text-align: center;
-    justify-content: center;
-    color: yellow;
+  
+  
 }
-
-
-
-
-
+#horarios article section{
+    flex-direction:column;
+    text-align: center;
+    margin: 10px auto;
+    width: 40%;
+    height: 200px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+}
+#horarios article section ul {
+    list-style: none;
+    padding: 0;
+}
 
 /* Tablet
 @media (max-width: 1024px) {
