@@ -6,35 +6,30 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem5.jpeg);
 }
 
-#planos article {
+.planos article {
     text-align: center;
     padding: 20px 0 30px 0;
     position: relative;   /* referência para posicionar a etiqueta "Mais escolhido" */
     overflow: visible;    /* deixa a etiqueta aparecer para fora do card */
+    /* ALTERAÇÃO: cada card ocupa 28% da largura, então cabem 3 por linha.
+       flex-grow: 0 impede o card de esticar: nas seções com 1 card só (Hiit e Plano Alpha)
+       ele fica do mesmo tamanho dos cards do Cross Training, centralizado pelo .grade do style.css */
+    flex-grow: 0;
+    flex-basis: 28%;
 }
 /* ALTERAÇÃO: o h3 dos planos perdeu a borda, que fazia o título parecer um botão */
-#planos article h3 {
+.planos article h3 {
     font-size: 36px;
     margin: 10px 0 0 0;
 }
-/* "#planos .preco" tem um id, por isso é mais forte (mais específico) que ".card p" do style.css
-   e consegue trocar o tamanho e a cor do texto */
-#planos .preco {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 50px;
-    color: white;
-    margin: 20px 0;
-}
-.preco small {
-    font-size: 20px;
-    color: gray;
-}
-#planos ul {
+/* ALTERAÇÃO: "#planos" virou ".planos" em todo o arquivo, porque agora são 3 seções de planos com a mesma classe.
+   ALTERAÇÃO: as regras do preço (.preco e .preco small) foram apagadas, porque os donos pediram para não mostrar os valores */
+.planos ul {
     list-style: none;
     padding: 0 20px;
     margin-bottom: 30px;
 }
-#planos li {
+.planos li {
     padding: 8px 0;
     border-bottom: 1px solid #333; /* linha separando os itens */
 }
@@ -84,7 +79,19 @@
     font-size: 18px;
 }
 
+/* ALTERAÇÃO: no tablet cabem só 2 cards por linha */
+@media screen and (max-width: 900px) {
+    .planos article {
+        flex-basis: 40%;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    /* ALTERAÇÃO: no celular, um card por linha. Precisa repetir aqui porque o ".planos article"
+       lá de cima é mais forte que o ".card" do style.css */
+    .planos article {
+        flex-basis: 100%;
+    }
     .destaque, .destaque:hover {
         transform: none; /* no celular os cards ficam um embaixo do outro, então não precisa aumentar */
     }
