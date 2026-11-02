@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- ALTERAÇÃO: página criada. Os horários agora ficam em uma tabela (<table>),
+     que é a tag certa para dados organizados em linhas e colunas -->
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Horários | Alpha Cross CT</title>
+        <meta name="author" content="Jonathan Jesus, Cassio , Laura">
+        <meta name="description" content="Grade de horários das aulas da Alpha Cross">
+        <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/horarios.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
+            <button id="btnMenu">&#9776;</button>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="modalidades.html">Modalidades</a>
+                <a href="planos.html">Planos</a>
+                <a href="horarios.html" class="ativo">Horários</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <a id="chamada1" class="botao" href="https://wa.me/5548999415643" target="_blank">Aula experimental</a>
+        </header>
+        <main>
+            <section class="banner">
+                <h1>Nossos Horários</h1>
+                <p>Treine no horário que cabe na sua rotina</p>
+            </section>
+
+            <section id="grade">
+                <span class="sub">Segunda a Sexta</span>
+                <h2 class="titulo">Grade de Aulas</h2>
+                <!-- Partes da tabela:
+                     <caption> = título da tabela
+                     <thead>   = cabeçalho (primeira linha, com os nomes das colunas)
+                     <tbody>   = corpo (os dados)
+                     <tr>      = uma linha
+                     <th>      = célula de título / <td> = célula de dado
+                     &#10004; é o símbolo ✔
+                     &#10008; é o símbolo ✘ -->
+
+                <!-- ALTERAÇÃO: a grade foi dividida em duas tabelas, uma para cada modalidade,
+                     porque o Alpha Hiit 45 não tem aula todos os dias. As colunas agora são os dias da semana,
+                     assim dá para ver em qual dia e horário tem cada aula -->
+                <table>
+                    <caption>Cross Training</caption>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5:50 às 6:50</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>6:50 às 7:50</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>12:00 às 13:00</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>17:30 às 18:30</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>18:30 às 19:30</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>19:30 às 20:30</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ALTERAÇÃO: tabela do Alpha Hiit 45, que só tem aula segunda, quarta e sexta -->
+                <table>
+                    <caption>Alpha Hiit 45</caption>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>17:30 às 18:30</td>
+                            <td>&#10004;</td>
+                            <td class="nao-tem">&#10008;</td>
+                            <td>&#10004;</td>
+                            <td class="nao-tem">&#10008;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                        <tr>
+                            <td>18:30 às 19:30</td>
+                            <td>&#10004;</td>
+                            <td class="nao-tem">&#10008;</td>
+                            <td>&#10004;</td>
+                            <td class="nao-tem">&#10008;</td>
+                            <td>&#10004;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="sabado" class="cinza">
+                <span class="sub">Fim de semana</span>
+                <h2 class="titulo">Aulão de Sábado</h2>
+                <p>Todo sábado tem aulão especial, aberto para alunos das duas modalidades.</p>
+                <p class="destaque-horario">Horário a definir</p>
+            </section>
+
+            <section id="dicas">
+                <h2 class="titulo">Dicas para o seu treino</h2>
+                <ul>
+                    <li>Chegue 10 minutos antes para o aquecimento</li>
+                    <li>Traga sua garrafinha de água e uma toalha</li>
+                    <li>Use roupas confortáveis e tênis</li>
+                    <li>Avise o coach sobre qualquer lesão ou limitação</li>
+                </ul>
+                <a class="botao" href="https://wa.me/5548999415643" target="_blank">Agendar aula experimental</a>
+            </section>
+        </main>
+        <footer>
+            <section>
+                <img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross">
+                <p>Mais do que um box, uma comunidade. Venha treinar com a gente e descubra do que você é capaz.</p>
+                <p>Cocal do Sul – SC</p>
+            </section>
+            <section>
+                <nav>
+                    <h4>Navegação</h4>
+                    <a href="index.html">Início</a>
+                    <a href="sobre.html">Sobre a Alpha</a>
+                    <a href="modalidades.html">Nossas Modalidades</a>
+                    <a href="planos.html">Nossos Planos</a>
+                    <a href="horarios.html">Nossos Horários</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </section>
+            <section>
+                <h4>Siga a Alpha</h4>
+                <a href="https://www.instagram.com/alphacross_ct/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61576485325156" target="_blank">Facebook</a>
+                <a href="https://wa.me/5548999415643" target="_blank">WhatsApp</a>
+            </section>
+            <p id="copyright">&copy; 2026 Alpha Cross CT. Todos os direitos reservados.</p>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
+</html>

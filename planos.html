@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- ALTERAÇÃO: página criada. Planos com preço, plano em destaque e perguntas frequentes -->
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planos | Alpha Cross CT</title>
+        <meta name="author" content="Jonathan Jesus, Cassio , Laura">
+        <meta name="description" content="Conheça os planos da Alpha Cross: mensal, trimestral, semestral e anual">
+        <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/planos.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
+            <button id="btnMenu">&#9776;</button>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="modalidades.html">Modalidades</a>
+                <a href="planos.html" class="ativo">Planos</a>
+                <a href="horarios.html">Horários</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <a id="chamada1" class="botao" href="https://wa.me/5548999415643" target="_blank">Aula experimental</a>
+        </header>
+        <main>
+            <section class="banner">
+                <h1>Nossos Planos</h1>
+                <p>Escolha o plano que combina com o seu objetivo</p>
+            </section>
+
+            <!-- PREÇOS PROVISÓRIOS: trocar pelos valores reais do box -->
+            <section id="planos" class="grade">
+                <span class="sub">Encontre o plano ideal</span>
+                <h2 class="titulo">Planos</h2>
+                <p>Todos os planos dão acesso às duas modalidades.</p>
+                <article class="card">
+                    <h3>Mensal</h3>
+                    <span class="lema">Flexibilidade</span>
+                    <!-- <small> deixa o "/mês" menor que o preço -->
+                    <p class="preco">R$ 199<small>,90/mês</small></p>
+                    <p>Comece a treinar e conheça a AlphaCross sem compromisso de longo prazo.</p>
+                    <ul>
+                        <li>Acesso a todas as aulas</li>
+                        <li>Acompanhamento de coach</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                </article>
+                <article class="card">
+                    <h3>Trimestral</h3>
+                    <span class="lema">Constância</span>
+                    <p class="preco">R$ 179<small>,90/mês</small></p>
+                    <p>Três meses para criar rotina e sentir os primeiros resultados.</p>
+                    <ul>
+                        <li>Acesso a todas as aulas</li>
+                        <li>Acompanhamento de coach</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                </article>
+                <!-- a classe "destaque" deixa este card com borda amarela e a etiqueta "Mais escolhido" -->
+                <article class="card destaque">
+                    <span class="etiqueta">Mais escolhido</span>
+                    <h3>Semestral</h3>
+                    <span class="lema">Evolução</span>
+                    <p class="preco">R$ 159<small>,90/mês</small></p>
+                    <p>Seis meses para fortalecer o corpo e ver resultados consistentes.</p>
+                    <ul>
+                        <li>Acesso a todas as aulas</li>
+                        <li>Acompanhamento de coach</li>
+                        <li>Avaliação física</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                </article>
+                <article class="card">
+                    <h3>Anual</h3>
+                    <span class="lema">Compromisso</span>
+                    <p class="preco">R$ 139<small>,90/mês</small></p>
+                    <p>Um ano dedicado à sua melhor versão, com o melhor custo-benefício.</p>
+                    <ul>
+                        <li>Acesso a todas as aulas</li>
+                        <li>Acompanhamento de coach</li>
+                        <li>Avaliação física</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                </article>
+            </section>
+
+            <!-- <details> e <summary> são tags do HTML que já abrem e fecham sozinhas ao clicar,
+                 sem precisar de JavaScript. O <summary> é a pergunta (sempre visível) e o resto é a resposta -->
+            <section id="duvidas" class="cinza">
+                <span class="sub">Ficou alguma dúvida?</span>
+                <h2 class="titulo">Perguntas Frequentes</h2>
+                <details>
+                    <summary>Nunca treinei, posso começar?</summary>
+                    <p>Pode sim! Os treinos são adaptados ao nível de cada aluno e o coach acompanha você desde a primeira aula.</p>
+                </details>
+                <details>
+                    <summary>Como funciona a aula experimental?</summary>
+                    <p>É só chamar no WhatsApp e agendar um horário. A aula experimental é gratuita.</p>
+                </details>
+                <details>
+                    <summary>Preciso levar algum equipamento?</summary>
+                    <p>Não. Basta vir com roupa confortável, tênis e uma garrafinha de água.</p>
+                </details>
+                <details>
+                    <summary>Posso treinar as duas modalidades?</summary>
+                    <p>Sim, todos os planos dão acesso ao Cross Training e ao Alpha Hiit 45.</p>
+                </details>
+            </section>
+        </main>
+        <footer>
+            <section>
+                <img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross">
+                <p>Mais do que um box, uma comunidade. Venha treinar com a gente e descubra do que você é capaz.</p>
+                <p>Cocal do Sul – SC</p>
+            </section>
+            <section>
+                <nav>
+                    <h4>Navegação</h4>
+                    <a href="index.html">Início</a>
+                    <a href="sobre.html">Sobre a Alpha</a>
+                    <a href="modalidades.html">Nossas Modalidades</a>
+                    <a href="planos.html">Nossos Planos</a>
+                    <a href="horarios.html">Nossos Horários</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </section>
+            <section>
+                <h4>Siga a Alpha</h4>
+                <a href="https://www.instagram.com/alphacross_ct/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61576485325156" target="_blank">Facebook</a>
+                <a href="https://wa.me/5548999415643" target="_blank">WhatsApp</a>
+            </section>
+            <p id="copyright">&copy; 2026 Alpha Cross CT. Todos os direitos reservados.</p>
+        </footer>
+        <script src="js/script.js"></script>
+        <!-- ALTERAÇÃO: script dos botões "Quero este plano". Vem DEPOIS do script.js porque usa a função AbrirWhatsApp que está nele -->
+        <script src="js/planos.js"></script>
+    </body>
+</html>
