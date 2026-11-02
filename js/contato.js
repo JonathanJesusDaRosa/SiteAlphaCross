@@ -27,7 +27,7 @@ function EnviarMensagem(evento){
 
     // monta o texto juntando partes com o + (concatenação)
     // "\n" é uma quebra de linha dentro do texto
-    var texto = "Olá! Vim pelo site da Alpha Cross.\n" +
+    var texto = "Olá! Vim pelo site do Alpha Cross.\n" +
                 "*Nome:* " + nome + "\n" +
                 "*Telefone:* " + telefone + "\n" +
                 "*Modalidade de interesse:* " + modalidade
