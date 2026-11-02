@@ -73,15 +73,6 @@
 #btnAvancar {
     right: 15px;
 }
-#legenda {
-    text-align: center;
-    color: gray;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding-top: 10px;
-}
-
 /* ALTERAÇÃO: a parte comum dos cards foi para a classe .card no style.css,
    aqui fica só o que é específico das modalidades */
 #modalidades article {
