@@ -21,7 +21,8 @@ function AbrirMenu(){
 // ALTERAÇÃO: função que abre o WhatsApp do box com uma mensagem já escrita.
 // Fica aqui no script.js porque é usada por mais de uma página (contato.js e planos.js),
 // assim escrevemos uma vez só e reaproveitamos.
-const numeroWhatsApp = "5548999415643"   // 55 (Brasil) + 48 (DDD) + número, sem espaços
+// ALTERAÇÃO: número do WhatsApp trocado para (48) 99815-5379 aqui e em todos os links wa.me das páginas HTML
+const numeroWhatsApp = "5548998155379"   // 55 (Brasil) + 48 (DDD) + número, sem espaços
 
 function AbrirWhatsApp(texto){
 

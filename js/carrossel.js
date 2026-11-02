@@ -1,4 +1,4 @@
-// ALTERAÇÃO: arquivo criado. Carrossel de fotos da seção "Sobre a Alpha".
+// ALTERAÇÃO: arquivo criado. Carrossel de fotos da seção "Sobre o Alpha".
 // Mesma lógica do carrossel feito em aula (indice, MostrarFoto, AvancarFoto, VoltarFoto, RestTime),
 // trocando o objeto "produto" por "galeria" e o tempo para 5 segundos
 
