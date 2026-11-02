@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!-- ALTERAÇÃO: página criada. Planos com preço, plano em destaque e perguntas frequentes -->
+<!-- ALTERAÇÃO: página criada. Planos com preço, plano em destaque e perguntas frequentes.
+     ALTERAÇÃO: planos atualizados com os planos reais do box, sem mostrar os preços (pedido dos donos) -->
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Planos | Alpha Cross CT</title>
         <meta name="author" content="Jonathan Jesus, Cassio , Laura">
-        <meta name="description" content="Conheça os planos da Alpha Cross: mensal, trimestral, semestral e anual">
+        <meta name="description" content="Conheça os planos do Alpha Cross: Cross Training, Alpha Hiit 45' e Plano Alpha">
         <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
@@ -24,7 +25,7 @@
                 <a href="horarios.html">Horários</a>
                 <a href="contato.html">Contato</a>
             </nav>
-            <a id="chamada1" class="botao" href="https://wa.me/5548999415643" target="_blank">Aula experimental</a>
+            <a id="chamada1" class="botao" href="https://wa.me/5548998155379" target="_blank">Aula experimental</a>
         </header>
         <main>
             <section class="banner">
@@ -32,59 +33,83 @@
                 <p>Escolha o plano que combina com o seu objetivo</p>
             </section>
 
-            <!-- PREÇOS PROVISÓRIOS: trocar pelos valores reais do box -->
-            <section id="planos" class="grade">
-                <span class="sub">Encontre o plano ideal</span>
-                <h2 class="titulo">Planos</h2>
-                <p>Todos os planos dão acesso às duas modalidades.</p>
+            <!-- ALTERAÇÃO: planos trocados pelos valores reais do box e separados em 3 seções, uma para cada tipo de treino:
+                 Cross Training, Alpha Hiit 45' e Plano Alpha (as duas modalidades juntas).
+                 As 3 seções usam a classe "planos" (em vez do id), porque um id só pode aparecer uma vez na página.
+                 Dentro de cada card, a lista <ul> mostra as frequências de treino disponíveis.
+                 ALTERAÇÃO: os preços foram retirados a pedido dos donos do box. O botão "Consultar valores"
+                 abre o WhatsApp para o aluno perguntar o valor -->
+            <section id="crosstraining" class="grade planos">
+                <span class="sub">Força, técnica e condicionamento</span>
+                <h2 class="titulo">Cross Training</h2>
+                <p>Escolha quantas vezes por semana você quer treinar. Consulte os valores pelo WhatsApp.</p>
                 <article class="card">
                     <h3>Mensal</h3>
                     <span class="lema">Flexibilidade</span>
-                    <!-- <small> deixa o "/mês" menor que o preço -->
-                    <p class="preco">R$ 199<small>,90/mês</small></p>
-                    <p>Comece a treinar e conheça a AlphaCross sem compromisso de longo prazo.</p>
+                    <p>Comece a treinar e conheça o AlphaCross sem compromisso de longo prazo.</p>
                     <ul>
-                        <li>Acesso a todas as aulas</li>
-                        <li>Acompanhamento de coach</li>
+                        <li>2x por semana</li>
+                        <li>3x por semana</li>
+                        <li>Livre</li>
                     </ul>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                    <a class="botao" href="https://wa.me/5548998155379" target="_blank">Consultar valores</a>
                 </article>
                 <article class="card">
                     <h3>Trimestral</h3>
                     <span class="lema">Constância</span>
-                    <p class="preco">R$ 179<small>,90/mês</small></p>
                     <p>Três meses para criar rotina e sentir os primeiros resultados.</p>
                     <ul>
-                        <li>Acesso a todas as aulas</li>
-                        <li>Acompanhamento de coach</li>
+                        <li>3x por semana</li>
+                        <li>Livre</li>
                     </ul>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
-                </article>
-                <!-- a classe "destaque" deixa este card com borda amarela e a etiqueta "Mais escolhido" -->
-                <article class="card destaque">
-                    <span class="etiqueta">Mais escolhido</span>
-                    <h3>Semestral</h3>
-                    <span class="lema">Evolução</span>
-                    <p class="preco">R$ 159<small>,90/mês</small></p>
-                    <p>Seis meses para fortalecer o corpo e ver resultados consistentes.</p>
-                    <ul>
-                        <li>Acesso a todas as aulas</li>
-                        <li>Acompanhamento de coach</li>
-                        <li>Avaliação física</li>
-                    </ul>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                    <a class="botao" href="https://wa.me/5548998155379" target="_blank">Consultar valores</a>
                 </article>
                 <article class="card">
-                    <h3>Anual</h3>
-                    <span class="lema">Compromisso</span>
-                    <p class="preco">R$ 139<small>,90/mês</small></p>
-                    <p>Um ano dedicado à sua melhor versão, com o melhor custo-benefício.</p>
+                    <h3>Semestral</h3>
+                    <span class="lema">Evolução</span>
+                    <p>Seis meses para fortalecer o corpo e ver resultados consistentes.</p>
                     <ul>
-                        <li>Acesso a todas as aulas</li>
-                        <li>Acompanhamento de coach</li>
-                        <li>Avaliação física</li>
+                        <li>3x por semana</li>
+                        <li>Livre</li>
                     </ul>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Quero este plano</a>
+                    <a class="botao" href="https://wa.me/5548998155379" target="_blank">Consultar valores</a>
+                </article>
+            </section>
+
+            <!-- ALTERAÇÃO: seção só do Alpha Hiit 45'. A classe "cinza" troca a cor do fundo para separar das outras seções -->
+            <section id="hiit" class="grade planos cinza">
+                <span class="sub">Treino intenso em 45 minutos</span>
+                <h2 class="titulo">Alpha Hiit 45'</h2>
+                <p>Plano único mensal. Escolha quantas vezes por semana você quer treinar.</p>
+                <article class="card">
+                    <h3>Mensal</h3>
+                    <span class="lema">Intensidade</span>
+                    <p>Treino intenso e rápido, ideal para a correria do dia a dia.</p>
+                    <ul>
+                        <li>2x por semana</li>
+                        <li>3x por semana</li>
+                        <li>Livre</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548998155379" target="_blank">Consultar valores</a>
+                </article>
+            </section>
+
+            <!-- ALTERAÇÃO: seção do Plano Alpha, que junta as duas modalidades -->
+            <section id="alpha" class="grade planos">
+                <span class="sub">Cross Training + Alpha Hiit 45'</span>
+                <h2 class="titulo">Plano Alpha</h2>
+                <p>As duas modalidades em um só plano, para quem quer treinar sem limites.</p>
+                <!-- a classe "destaque" deixa este card com borda amarela e a etiqueta em cima -->
+                <article class="card destaque">
+                    <span class="etiqueta">Mais completo</span>
+                    <h3>Livre</h3>
+                    <span class="lema">As duas modalidades</span>
+                    <p>Treine Cross Training e Alpha Hiit 45' quantas vezes quiser na semana.</p>
+                    <ul>
+                        <li>Cross Training livre</li>
+                        <li>Alpha Hiit 45' livre</li>
+                    </ul>
+                    <a class="botao" href="https://wa.me/5548998155379" target="_blank">Consultar valores</a>
                 </article>
             </section>
 
@@ -105,9 +130,15 @@
                     <summary>Preciso levar algum equipamento?</summary>
                     <p>Não. Basta vir com roupa confortável, tênis e uma garrafinha de água.</p>
                 </details>
+                <!-- ALTERAÇÃO: resposta corrigida, agora só o Plano Alpha dá acesso às duas modalidades -->
                 <details>
                     <summary>Posso treinar as duas modalidades?</summary>
-                    <p>Sim, todos os planos dão acesso ao Cross Training e ao Alpha Hiit 45.</p>
+                    <p>Sim! O Plano Alpha dá acesso livre ao Cross Training e ao Alpha Hiit 45'.</p>
+                </details>
+                <!-- ALTERAÇÃO: nova pergunta explicando o que é o plano "Livre" -->
+                <details>
+                    <summary>O que significa o plano Livre?</summary>
+                    <p>No plano Livre você pode treinar quantas vezes quiser na semana, em qualquer horário da modalidade.</p>
                 </details>
             </section>
         </main>
@@ -121,7 +152,7 @@
                 <nav>
                     <h4>Navegação</h4>
                     <a href="index.html">Início</a>
-                    <a href="sobre.html">Sobre a Alpha</a>
+                    <a href="sobre.html">Sobre o Alpha</a>
                     <a href="modalidades.html">Nossas Modalidades</a>
                     <a href="planos.html">Nossos Planos</a>
                     <a href="horarios.html">Nossos Horários</a>
@@ -129,15 +160,15 @@
                 </nav>
             </section>
             <section>
-                <h4>Siga a Alpha</h4>
+                <h4>Siga o Alpha</h4>
                 <a href="https://www.instagram.com/alphacross_ct/" target="_blank">Instagram</a>
                 <a href="https://www.facebook.com/profile.php?id=61576485325156" target="_blank">Facebook</a>
-                <a href="https://wa.me/5548999415643" target="_blank">WhatsApp</a>
+                <a href="https://wa.me/5548998155379" target="_blank">WhatsApp</a>
             </section>
             <p id="copyright">&copy; 2026 Alpha Cross CT. Todos os direitos reservados.</p>
         </footer>
         <script src="js/script.js"></script>
-        <!-- ALTERAÇÃO: script dos botões "Quero este plano". Vem DEPOIS do script.js porque usa a função AbrirWhatsApp que está nele -->
+        <!-- ALTERAÇÃO: script dos botões "Consultar valores". Vem DEPOIS do script.js porque usa a função AbrirWhatsApp que está nele -->
         <script src="js/planos.js"></script>
     </body>
 </html>
