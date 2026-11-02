@@ -11,20 +11,26 @@
         <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
         <!-- ALTERAÇÃO: link do Google Fonts adicionado, antes as fontes Barlow Condensed e Bebas Neue não eram carregadas -->
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-        <!-- ALTERAÇÃO: o CSS foi movido para a pasta css/ para organizar os arquivos -->
+        <!-- ALTERAÇÃO: style.css (comum a todas as páginas) + index.css (só desta página), os dois na pasta css/ -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
+        <!-- ALTERAÇÃO: o header e o footer são iguais em todas as páginas (só muda a classe "ativo" no menu).
+             Quando mudar algo neles, tem que mudar em todos os arquivos .html -->
         <header>
             <!-- ALTERAÇÃO: href="" trocado por index.html (link vazio só recarregava a página) e alt preenchido para acessibilidade -->
             <a href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
             <!-- ALTERAÇÃO: botão do menu hambúrguer (&#9776; é o símbolo ☰). Só aparece no celular, quem abre e fecha o menu é o js/script.js -->
             <button id="btnMenu">&#9776;</button>
+            <!-- ALTERAÇÃO: os links agora levam para as páginas separadas (antes eram #sobre, #planos... na mesma página) -->
             <nav>
-                <a href="#sobre">Sobre o Box</a>
-                <a href="#modalidades">Modalidades</a>
-                <a href="#planos">Planos</a>
-                <a href="#horarios">Horários</a>
+                <a href="index.html" class="ativo">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="modalidades.html">Modalidades</a>
+                <a href="planos.html">Planos</a>
+                <a href="horarios.html">Horários</a>
+                <a href="contato.html">Contato</a>
             </nav>
             <!-- ALTERAÇÃO: adicionada a classe "botao" para todos os botões do site terem o mesmo visual -->
             <a id="chamada1" class="botao" href="https://wa.me/5548999415643" target="_blank">Aula experimental</a>
@@ -32,8 +38,8 @@
         <main>
             <section id="topo">
                 <h1>Supere seus limites.<br>Conquiste sua melhor versão</h1>
-                <!-- ALTERAÇÃO: href="" trocado por #modalidades e adicionada a classe "botao" -->
-                <a class="botao" href="#modalidades">Conheça nossas modalidades</a>
+                <!-- ALTERAÇÃO: href="" trocado pela página de modalidades e adicionada a classe "botao" -->
+                <a class="botao" href="modalidades.html">Conheça nossas modalidades</a>
             </section>
 
             <section id="sobre">
@@ -42,10 +48,9 @@
                     <span class="sub">Quem Somos</span>
                     <h2 class="titulo">Sobre a Alpha</h2>
                     <p>A AlphaCross é um box de CrossFit localizado em Cocal do Sul – SC, criado para ajudar pessoas de diferentes níveis a superarem seus limites e alcançarem seus objetivos.</p>
-                    <p>Aqui, cada treino é uma oportunidade de evoluir, ganhar força, melhorar o condicionamento e, principalmente, fazer parte de uma comunidade que incentiva e apoia uns aos outros.</p>
                     <p>Mais do que um lugar para treinar, somos um espaço de superação, disciplina, saúde e evolução. Venha conhecer a AlphaCross e descubra do que você é capaz!</p>
-                    <!-- ALTERAÇÃO: adicionada a classe "botao" (antes o estilo vinha do seletor "a:last-child") -->
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Entre em contato</a>
+                    <!-- ALTERAÇÃO: na página inicial fica só um resumo, o botão leva para a página completa do Sobre -->
+                    <a class="botao" href="sobre.html">Conheça nossa história</a>
                 </article>
                 <!-- ALTERAÇÃO: carrossel virou <figure> (tag semântica para imagens) e passou a ser controlado pelo js/carrossel.js.
                      Agora tem uma imagem só (moldura), que o JS troca, botões de voltar/avançar e uma legenda (figcaption) -->
@@ -57,106 +62,55 @@
                 </figure>
             </section>
 
-            <section id="modalidades">
-                <!-- ALTERAÇÃO: <a> sem href virou <span> -->
+            <!-- ALTERAÇÃO: classes "grade" (cards lado a lado) e "cinza" (fundo alternado), que ficam no style.css -->
+            <section id="modalidades" class="grade cinza">
                 <span class="sub">O que temos na Alpha</span>
                 <h2 class="titulo">Nossas Modalidades</h2>
-                <!-- ALTERAÇÃO: cada card virou <article> direto dentro da section (antes era article > section).
+                <!-- ALTERAÇÃO: cada card virou <article class="card"> direto dentro da section (antes era article > section).
                      O article é um conteúdo independente, então é a tag certa para cada card -->
-                <article>
+                <article class="card">
                     <img src="img/fotos-teste/CrossFit.jpg" alt="Aula de Cross Training">
                     <!-- ALTERAÇÃO: corrigido "CrossTraning" para "Cross Training" -->
                     <h3>Cross Training</h3>
-                    <p>O Cross Training combina diferentes exercícios e métodos de treinamento para desenvolver força, resistência, mobilidade, condicionamento e coordenação. É uma modalidade dinâmica e adaptável para diferentes níveis de condicionamento físico.</p>
+                    <p>Força, resistência, mobilidade e condicionamento em treinos dinâmicos e adaptáveis para todos os níveis.</p>
                 </article>
-                <article>
+                <article class="card">
                     <img src="img/fotos-teste/CrossTraining.webp" alt="Aula de Alpha Hiit 45">
                     <!-- ALTERAÇÃO: nome padronizado como "Alpha Hiit 45" (estava "Hit 45", "Hiit 45" e "CrossHit") - confirmar com os donos -->
                     <h3>Alpha Hiit 45</h3>
-                    <p>O Alpha Hiit 45 é um treino intenso e dinâmico, focado em melhorar o condicionamento físico, a resistência e a queima calórica. Os exercícios são realizados de forma variada e desafiadora, tornando cada treino uma nova oportunidade de superar seus limites.</p>
+                    <p>Treino intenso de 45 minutos focado em condicionamento, resistência e queima calórica.</p>
                 </article>
+                <!-- ALTERAÇÃO: botão para a página completa de modalidades -->
+                <p><a class="botao" href="modalidades.html">Ver detalhes das modalidades</a></p>
             </section>
 
-            <section id="planos">
-                <span class="sub">Encontre o plano ideal</span>
-                <h2 class="titulo">Nossos Planos</h2>
-                <!-- ALTERAÇÃO: cards viraram <article>, os <a> sem href viraram <span class="lema">,
-                     "Mais Informações" ganhou link do WhatsApp (antes href="") e a classe "botao" no lugar de "acao" -->
-                <article>
-                    <h3>Mensal</h3>
-                    <span class="lema">Flexibilidade</span>
-                    <p>Comece a treinar e conheça a AlphaCross sem compromisso de longo prazo.</p>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Mais Informações</a>
-                </article>
-                <article>
-                    <h3>Trimestral</h3>
-                    <span class="lema">Constância</span>
-                    <p>Três meses para criar rotina e sentir os primeiros resultados.</p>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Mais Informações</a>
-                </article>
-                <article>
-                    <h3>Semestral</h3>
-                    <span class="lema">Evolução</span>
-                    <p>Seis meses para fortalecer o corpo e ver resultados consistentes.</p>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Mais Informações</a>
-                </article>
-                <article>
-                    <h3>Anual</h3>
-                    <span class="lema">Compromisso</span>
-                    <p>Um ano dedicado à sua melhor versão, com o melhor custo-benefício.</p>
-                    <a class="botao" href="https://wa.me/5548999415643" target="_blank">Mais Informações</a>
-                </article>
+            <!-- ALTERAÇÃO: as seções completas de Planos e Horários foram para planos.html e horarios.html.
+                 Aqui ficou só uma chamada com botões para essas páginas -->
+            <section id="chamada">
+                <h2 class="titulo">Pronto para começar?</h2>
+                <p>Escolha o plano ideal e encontre o melhor horário para o seu dia a dia.</p>
+                <a class="botao" href="planos.html">Ver planos</a>
+                <a class="botao botao-borda" href="horarios.html">Ver horários</a>
             </section>
 
-            <section id="horarios">
-                <span class="sub">Treine no seu tempo</span>
-                <!-- ALTERAÇÃO: corrigidos acentos (Horários, às, Sábado) -->
-                <h2 class="titulo">Nossos Horários</h2>
-                <article>
-                    <!-- ALTERAÇÃO: h2 virou h3 e h3 virou h4, os títulos precisam seguir a ordem (h2 > h3 > h4) -->
-                    <h3>Cross Training</h3>
-                    <section>
-                        <h4>Segunda a Sexta</h4>
-                        <ul>
-                            <li>5:50 às 6:50</li>
-                            <li>6:50 às 7:50</li>
-                            <li>12:00 às 13:00</li>
-                            <li>17:30 às 18:30</li>
-                            <li>18:30 às 19:30</li>
-                            <li>19:30 às 20:30</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h4>Sábado</h4>
-                        <ul>
-                            <li>Horário a definir</li>
-                        </ul>
-                        <span class="lema">Aulão</span>
-                    </section>
+            <!-- ALTERAÇÃO: seção nova de depoimentos de alunos (textos provisórios, trocar pelos reais).
+                 <blockquote> é a tag semântica para citação, e <cite> para o autor da citação -->
+            <section id="depoimentos" class="grade cinza">
+                <span class="sub">Quem treina recomenda</span>
+                <h2 class="titulo">Depoimentos</h2>
+                <article class="card">
+                    <blockquote>"Nunca imaginei que fosse gostar tanto de treinar. A energia do box é contagiante!"</blockquote>
+                    <cite>Aluno(a) 1</cite>
                 </article>
-                <article>
-                    <h3>Alpha Hiit 45</h3>
-                    <section>
-                        <h4>Segunda a Sexta</h4>
-                        <ul>
-                            <li>5:50 às 6:50</li>
-                            <li>6:50 às 7:50</li>
-                            <li>12:00 às 13:00</li>
-                            <li>17:30 às 18:30</li>
-                            <li>18:30 às 19:30</li>
-                            <li>19:30 às 20:30</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h4>Sábado</h4>
-                        <ul>
-                            <li>Horário a definir</li>
-                        </ul>
-                        <span class="lema">Aulão</span>
-                    </section>
+                <article class="card">
+                    <blockquote>"Os coaches acompanham de perto e adaptam o treino para o meu nível. Evoluí muito."</blockquote>
+                    <cite>Aluno(a) 2</cite>
+                </article>
+                <article class="card">
+                    <blockquote>"Mais do que uma academia, a Alpha virou uma segunda família para mim."</blockquote>
+                    <cite>Aluno(a) 3</cite>
                 </article>
             </section>
-
         </main>
         <!-- ALTERAÇÃO: footer reorganizado em 3 colunas (section) + linha de direitos autorais.
              Os article viraram section porque são partes do rodapé, e não conteúdos independentes -->
@@ -171,10 +125,13 @@
             <section>
                 <nav>
                     <h4>Navegação</h4>
-                    <a href="#sobre">Sobre a Alpha</a>
-                    <a href="#modalidades">Nossas Modalidades</a>
-                    <a href="#planos">Nossos Planos</a>
-                    <a href="#horarios">Nossos Horários</a>
+                    <!-- ALTERAÇÃO: links apontando para as páginas separadas -->
+                    <a href="index.html">Início</a>
+                    <a href="sobre.html">Sobre a Alpha</a>
+                    <a href="modalidades.html">Nossas Modalidades</a>
+                    <a href="planos.html">Nossos Planos</a>
+                    <a href="horarios.html">Nossos Horários</a>
+                    <a href="contato.html">Contato</a>
                 </nav>
             </section>
             <section>

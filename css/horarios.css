@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* ALTERAÇÃO: arquivo criado. Estilos usados SÓ na página horarios.html */
+
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem3.jpeg);
+}
+
+#grade {
+    padding: 100px 5%;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 60px auto;  /* ALTERAÇÃO: centraliza a tabela e dá 60px de espaço embaixo, separando as duas tabelas */
+    border-collapse: collapse; /* junta as bordas das células (sem isso fica borda dupla) */
+    font-size: 20px;
+}
+/* ALTERAÇÃO: o caption agora é o nome da modalidade, então ficou grande e amarelo como um título */
+caption {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    color: #FFC300;
+    padding-bottom: 15px;
+}
+th {
+    background-color: #FFC300;
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 15px;
+}
+td {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+/* a primeira coluna (horário) fica em amarelo */
+td:first-child {
+    color: #FFC300;
+    font-weight: bold;
+}
+/* nth-child(even) = linhas pares. Fundo diferente para facilitar a leitura da linha */
+tbody tr:nth-child(even) {
+    background-color: #111;
+}
+/* destaca a linha inteira ao passar o mouse */
+tbody tr:hover {
+    background-color: #222;
+}
+/* ALTERAÇÃO: X cinza para os dias que não têm aula da modalidade */
+.nao-tem {
+    color: #555;
+}
+#sabado {
+    padding: 80px 5%;
+    text-align: center;
+}
+#sabado p {
+    font-size: 20px;
+    color: gray;
+}
+#sabado .destaque-horario {
+    display: inline-block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    color: #FFC300;
+    border: 2px solid #FFC300;
+    border-radius: 20px;
+    padding: 10px 40px;
+}
+
+#dicas {
+    padding: 80px 5%;
+    text-align: center;
+}
+#dicas ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+#dicas li {
+    font-size: 20px;
+    color: gray;
+    padding: 8px 0;
+}
+#dicas li::before {
+    content: "\2714  "; /* símbolo ✔ antes de cada item */
+    color: #FFC300;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 16px;
+    }
+    th {
+        font-size: 18px;
+        padding: 10px 5px;
+    }
+    td {
+        padding: 10px 5px;
+    }
+}

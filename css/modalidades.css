@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* ALTERAÇÃO: arquivo criado. Estilos usados SÓ na página modalidades.html */
+
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-teste/CrossFit.jpg);
+}
+
+#lista {
+    padding: 60px 5%;
+}
+
+/* cada modalidade: foto de um lado, texto do outro */
+#lista article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+/* nth-child(even) = os article em posição par (2º, 4º...).
+   row-reverse inverte a ordem, assim a foto fica à direita e o layout vai alternando */
+#lista article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+#lista article img {
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#lista article section {
+    width: 50%;
+    padding: 0 50px;
+}
+#lista .sub, #lista .titulo {
+    text-align: left;
+}
+#lista p {
+    font-size: 19px;
+    color: gray;
+}
+#lista h3 {
+    font-size: 28px;
+    color: #FFC300;
+    margin-bottom: 5px;
+}
+#lista ul {
+    list-style: none;
+    padding: 0;
+}
+/* ::before coloca um conteúdo antes de cada item da lista, aqui o símbolo ✔ */
+#lista li::before {
+    content: "\2714  ";
+    color: #FFC300;
+}
+#lista li {
+    font-size: 19px;
+    padding: 4px 0;
+}
+
+#experimental {
+    padding: 80px 5%;
+    text-align: center;
+}
+#experimental p {
+    font-size: 22px;
+    color: gray;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    /* no celular tudo vira coluna: foto em cima, texto embaixo */
+    #lista article, #lista article:nth-child(even) {
+        flex-direction: column;
+    }
+    #lista article img, #lista article section {
+        width: 100%;
+        padding: 0;
+    }
+    #lista article img {
+        height: 300px;
+    }
+}

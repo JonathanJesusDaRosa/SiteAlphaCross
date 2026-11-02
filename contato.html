@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- ALTERAÇÃO: página criada. Formulário de contato, informações e mapa -->
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contato | Alpha Cross CT</title>
+        <meta name="author" content="Jonathan Jesus, Cassio , Laura">
+        <meta name="description" content="Entre em contato com a Alpha Cross e agende sua aula experimental">
+        <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contato.css">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
+            <button id="btnMenu">&#9776;</button>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="modalidades.html">Modalidades</a>
+                <a href="planos.html">Planos</a>
+                <a href="horarios.html">Horários</a>
+                <a href="contato.html" class="ativo">Contato</a>
+            </nav>
+            <a id="chamada1" class="botao" href="https://wa.me/5548999415643" target="_blank">Aula experimental</a>
+        </header>
+        <main>
+            <section class="banner">
+                <h1>Contato</h1>
+                <p>Fale com a gente e agende sua aula experimental</p>
+            </section>
+
+            <section id="contato">
+                <article>
+                    <h2 class="titulo">Envie uma mensagem</h2>
+                    <!-- <label> é o texto que descreve o campo. O "for" do label tem que ser igual ao "id" do campo,
+                         assim clicar no texto já coloca o cursor no campo (e ajuda na acessibilidade).
+                         "required" faz o navegador não deixar enviar com o campo vazio.
+                         ALTERAÇÃO: o envio do formulário agora é feito pelo js/contato.js, que abre o WhatsApp com a mensagem -->
+                    <form id="formContato">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome" required>
+
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" placeholder="(48) 99999-9999" required>
+
+                        <label for="modalidade">Modalidade de interesse</label>
+                        <select id="modalidade">
+                            <option>Cross Training</option>
+                            <option>Alpha Hiit 45</option>
+                            <option>Ainda não sei</option>
+                        </select>
+
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+
+                        <button type="submit" class="botao">Enviar mensagem</button>
+                    </form>
+                    <!-- ALTERAÇÃO: parágrafo vazio onde o JavaScript escreve a mensagem de agradecimento depois do envio -->
+                    <p id="aviso"></p>
+                </article>
+
+                <!-- <address> é a tag semântica para informações de contato.
+                     Dentro dele não pode ter títulos (h1 a h6), por isso os nomes estão em <strong> -->
+                <article id="informacoes">
+                    <h2 class="titulo">Informações</h2>
+                    <address>
+                        <strong>Endereço</strong>
+                        <p>Cocal do Sul – SC (endereço completo a definir)</p>
+
+                        <strong>WhatsApp</strong>
+                        <p><a href="https://wa.me/5548999415643" target="_blank">(48) 99941-5643</a></p>
+
+                        <strong>Instagram</strong>
+                        <p><a href="https://www.instagram.com/alphacross_ct/" target="_blank">@alphacross_ct</a></p>
+
+                        <strong>Atendimento</strong>
+                        <p>Segunda a sexta, das 5:50 às 20:30</p>
+                    </address>
+                </article>
+            </section>
+
+            <section id="mapa" class="cinza">
+                <h2 class="titulo">Onde Estamos</h2>
+                <iframe src="https://www.google.com/maps?q=Cocal+do+Sul+SC&output=embed" title="Mapa da localização da Alpha Cross"></iframe>
+            </section>
+        </main>
+        <footer>
+            <section>
+                <img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross">
+                <p>Mais do que um box, uma comunidade. Venha treinar com a gente e descubra do que você é capaz.</p>
+                <p>Cocal do Sul – SC</p>
+            </section>
+            <section>
+                <nav>
+                    <h4>Navegação</h4>
+                    <a href="index.html">Início</a>
+                    <a href="sobre.html">Sobre a Alpha</a>
+                    <a href="modalidades.html">Nossas Modalidades</a>
+                    <a href="planos.html">Nossos Planos</a>
+                    <a href="horarios.html">Nossos Horários</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </section>
+            <section>
+                <h4>Siga a Alpha</h4>
+                <a href="https://www.instagram.com/alphacross_ct/" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61576485325156" target="_blank">Facebook</a>
+                <a href="https://wa.me/5548999415643" target="_blank">WhatsApp</a>
+            </section>
+            <p id="copyright">&copy; 2026 Alpha Cross CT. Todos os direitos reservados.</p>
+        </footer>
+        <script src="js/script.js"></script>
+        <!-- ALTERAÇÃO: script do formulário. Vem DEPOIS do script.js porque usa a função AbrirWhatsApp que está nele -->
+        <script src="js/contato.js"></script>
+    </body>
+</html>

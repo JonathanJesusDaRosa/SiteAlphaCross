@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+/* ALTERAÇÃO: este arquivo agora tem só o que é COMUM a todas as páginas
+   (header, footer, títulos, botões, cards e banner). O estilo específico de cada página
+   fica no seu próprio arquivo: index.css, sobre.css, modalidades.css, planos.css, horarios.css e contato.css */
+
 /* ALTERAÇÃO (geral): a cor "yellow" (amarelo puro, cor de marca-texto) foi trocada
    em todo o arquivo por #FFC300, um amarelo-ouro que passa um visual mais profissional */
 
@@ -53,14 +57,20 @@ header nav a {
     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 /* ALTERAÇÃO: link do menu fica amarelo ao passar o mouse */
 header nav a:hover {
     color: #FFC300;
 }
-/* ALTERAÇÃO: botão do menu hambúrguer, escondido no computador (só aparece no @media do celular) */
+/* ALTERAÇÃO: classe "ativo" marca no menu a página em que a pessoa está.
+   Ela é colocada direto no HTML de cada página, no link daquela página */
+header nav a.ativo {
+    color: #FFC300;
+    border-bottom: 2px solid #FFC300;
+}
+/* ALTERAÇÃO: botão do menu hambúrguer, escondido no computador (só aparece no @media) */
 #btnMenu {
     display: none;
     background: none;
@@ -110,192 +120,88 @@ h1 {
     text-decoration: none;
     padding: 12px 30px;
     border-radius: 30px;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.3s; /* a cor muda suavemente no hover */
 }
 .botao:hover {
     background-color: white;
 }
-
-#topo{
-    padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
-    /* ALTERAÇÃO: o "../" foi adicionado porque o CSS agora está na pasta css/, então precisa sair dela para achar a pasta img/ */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(../img/fotos-box/imagem1.jpeg);
-    background-size: cover;        /* a imagem cobre a seção toda */
-    background-position: center;   /* centraliza a imagem */
-    background-repeat: no-repeat;  /* não repete a imagem */
-    height: 100vh;                 /* seção com a altura da tela inteira */
-
-    text-align: center;
-}
-
-#sobre {
-    padding: 100px 5%;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; /* ALTERAÇÃO: texto e carrossel ficam alinhados pelo meio */
-    background-color: black;
-}
-#sobre article p{
-    font-size: 20px;
-    color: gray;
-}
-/* ALTERAÇÃO: no Sobre o título fica à esquerda, porque o texto está em coluna ao lado do carrossel */
-#sobre .sub, #sobre .titulo {
-    text-align: left;
-}
-#sobre article {
-    width: 50%;
-    padding: 50px 50px;
-}
-
-/* ALTERAÇÃO: carrossel refeito, a troca das fotos agora é feita no js/carrossel.js
-   (antes era só CSS, com overflow-x e scroll-snap) */
-#carrossel{
-    width: 50%;
-    margin: 0;              /* a tag figure vem com margem por padrão, aqui tiramos */
-    position: relative;     /* serve de referência para posicionar os botões em cima da foto */
-}
-#moldura {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;  /* a imagem cobre o espaço definido, cortando o que passar */
-    border-radius: 20px;
-    display: block;     /* tira o espacinho que fica embaixo da imagem */
-}
-#carrossel button {
-    position: absolute;     /* o botão "flutua" em cima da foto */
-    top: 250px;             /* metade da altura da foto (500px / 2) */
-    margin-top: -25px;      /* sobe metade da altura do botão, para ficar bem no meio */
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;     /* deixa o botão redondo */
-    background-color: rgba(0, 0, 0, 0.6);
+/* ALTERAÇÃO: variação do botão só com borda (usado quando tem dois botões lado a lado) */
+.botao-borda {
+    background-color: transparent;
     color: #FFC300;
-    font-size: 20px;
-    cursor: pointer;        /* mostra a "mãozinha" ao passar o mouse */
+    border: 2px solid #FFC300;
 }
-#carrossel button:hover {
+.botao-borda:hover {
     background-color: #FFC300;
     color: black;
 }
-#btnVoltar {
-    left: 15px;
+
+/* ALTERAÇÃO: classe para alternar o fundo das seções entre preto e cinza escuro,
+   assim dá para ver onde uma seção termina e a outra começa */
+.cinza {
+    background-color: #111;
 }
-#btnAvancar {
-    right: 15px;
+
+/* ALTERAÇÃO: classe "grade" reaproveitada em todas as seções que têm cards lado a lado
+   (antes era uma regra para #modalidades e outra para #planos).
+   A section vira flex, o flex-wrap deixa quebrar a linha, e o subtítulo, o título e o parágrafo
+   de introdução ocupam 100% da largura para ficarem sozinhos em cima dos cards */
+.grade {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 100px 5%;
 }
-#legenda {
+.grade .sub, .grade .titulo, .grade > p {
+    width: 100%;
+}
+.grade > p {
     text-align: center;
     color: gray;
     font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding-top: 10px;
 }
 
-/* ALTERAÇÃO: Modalidades e Planos: os cards (article) ficam lado a lado direto dentro da section.
-   O flex-wrap deixa quebrar a linha, e o subtítulo e o título ocupam 100% da largura
-   para ficarem sozinhos em cima dos cards (mesma ideia usada em #horarios) */
-#modalidades, #planos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-#modalidades .sub, #modalidades .titulo,
-#planos .sub, #planos .titulo {
-    width: 100%;
-}
-
-/* ALTERAÇÃO: efeito de hover nos cards, o card sobe 5px quando o mouse passa por cima.
-   O transition faz o movimento ser suave em vez de "pular" */
-#modalidades article, #planos article {
-    transition: transform 0.3s;
-}
-#modalidades article:hover, #planos article:hover {
-    transform: translateY(-5px);
-}
-
-#modalidades {
-    padding: 100px 5%;
-    background-color: #111; /* ALTERAÇÃO: seções alternam entre preto e cinza escuro para separar visualmente */
-    color: white;
-}
-#modalidades article {
-    margin: 20px;
-    background-color: #1c1c1c;
-    border-radius: 40px;
+/* ALTERAÇÃO: estilo comum dos cards (article com a classe "card"), usado em várias páginas */
+.card {
     flex: 1; /*Faz os cards ficarem do mesmo tamanho*/
-    overflow: hidden;   /* corta a foto nos cantos arredondados do card */
-}
-#modalidades article h3{
-    font-size: 34px;
-    color: #FFC300;
-    padding: 5px 20px;
-    margin: 10px 0 0 0;
-}
-#modalidades article p {
-    font-size: 17px;
-    color: gray;
-    padding: 5px 20px 20px 20px;
-}
-#modalidades article img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* ALTERAÇÃO: as duas fotos ficam com a mesma altura, cortando o excesso */
-}
-#planos {
-    padding: 100px 5%;
-    background-color: black;
-}
-#planos article {
     margin: 10px;
     background-color: #1c1c1c;
-    border-radius: 40px;
-    flex: 1; /*Faz os cards ficarem do mesmo tamanho*/
-    text-align: center;
-    padding-bottom: 20px;
+    border-radius: 30px;
+    overflow: hidden;   /* corta a foto nos cantos arredondados do card */
+    transition: transform 0.3s; /* o movimento do hover fica suave em vez de "pular" */
 }
-#planos article h3 {
-    font-size: 34px;
+/* ALTERAÇÃO: efeito de hover, o card sobe 5px quando o mouse passa por cima */
+.card:hover {
+    transform: translateY(-5px);
+}
+.card h3 {
+    font-size: 32px;
     color: #FFC300;
-    padding: 5px 20px ;
-    border: 1px solid #FFC300;
-    border-radius: 20px;
-    margin: 20px;
+    padding: 0 20px;
 }
-#planos article p {
+.card p {
     font-size: 17px;
-    padding: 5px 20px;
+    color: gray;
+    padding: 0 20px;
 }
-#horarios {
-    padding: 100px 5%;
-    background-color: #111; /* ALTERAÇÃO: seções alternam entre preto e cinza escuro */
-}
-#horarios article{
-    display: flex;
-    flex-wrap:wrap;
-}
-/* ALTERAÇÃO: seletor trocado de h2 para h3, acompanhando a correção dos títulos no HTML */
-#horarios article h3{
-    width: 100%;
-    font-size: 34px;
-    color: #FFC300;
+
+/* ALTERAÇÃO: banner do topo das páginas internas (Sobre, Modalidades, Planos...).
+   É uma versão menor do #topo da página inicial. Cada página troca a foto no seu próprio CSS */
+.banner {
+    padding: 180px 5% 80px 5%;
     text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem2.jpeg);
+    background-size: cover;
+    background-position: center;
 }
-#horarios article section{
-    flex-direction:column;
-    text-align: center;
-    margin: 10px auto;
-    width: 40%;
-    height: 200px;
-    border: 2px solid #FFC300;
-    border-radius: 20px;
+.banner h1 {
+    margin: 0;
 }
-#horarios article section ul {
-    list-style: none;
-    padding: 0;
+.banner p {
+    font-size: 22px;
+    color: #ccc;
 }
 
 /* ALTERAÇÃO: estilo do rodapé (antes não tinha nenhum). 3 colunas lado a lado + linha de direitos */
@@ -340,26 +246,16 @@ footer a:hover {
     margin-top: 40px;
 }
 
-/* Tablet
-@media (max-width: 1024px) {
-     seu código aqui
-}
-
- Smartphone
-@media (max-width: 480px) {
-    seu código aqui
-} */
-
-@media screen and (max-width: 600px) {
-    /* ALTERAÇÃO: removido o "body { background: yellow }", que era sobra de teste */
-
+/* ALTERAÇÃO: o menu vira hambúrguer a partir de 900px (e não 600px),
+   porque com 6 links o menu não cabe em telas de tablet */
+@media screen and (max-width: 900px) {
     /* ALTERAÇÃO: o header não vira mais coluna (cobria metade da tela).
        Agora fica logo na esquerda e botão ☰ na direita, e o menu abre por baixo */
     #btnMenu {
         display: block;
     }
     #chamada1 {
-        display: none; /* esconde o botão "Aula experimental" para caber no celular */
+        display: none; /* esconde o botão "Aula experimental" para caber na tela */
     }
     header nav {
         display: none; /* menu escondido até clicar no ☰ */
@@ -379,26 +275,18 @@ footer a:hover {
     header nav a {
         padding: 10px;
     }
+}
 
-    /* ALTERAÇÃO: ajustes básicos para o celular (os ajustes completos ficam para a etapa de responsividade) */
+@media screen and (max-width: 600px) {
+    /* ALTERAÇÃO: removido o "body { background: yellow }", que era sobra de teste */
     h1 {
         font-size: 50px;
     }
     .titulo {
         font-size: 45px;
     }
-    #sobre {
-        flex-direction: column; /* texto em cima, carrossel embaixo */
-    }
-    #sobre article, #carrossel {
-        width: 100%;
-        padding: 0;
-    }
-    #modalidades article, #planos article {
+    .card {
         flex-basis: 100%; /* um card por linha */
-    }
-    #horarios article section {
-        width: 100%;
     }
     footer section {
         width: 100%;
