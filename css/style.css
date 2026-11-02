@@ -1,0 +1,407 @@
+@charset "utf-8";
+
+/* ALTERAÇÃO (geral): a cor "yellow" (amarelo puro, cor de marca-texto) foi trocada
+   em todo o arquivo por #FFC300, um amarelo-ouro que passa um visual mais profissional */
+
+* {
+    box-sizing: border-box;/* Faz o padding e a borda ficarem DENTRO da largura definida,
+   evitando que os elementos passem do tamanho da tela */
+}
+
+body{
+    background-color: black;
+    color: white;
+    /* ALTERAÇÃO: a fonte foi declarada só aqui no body (antes era repetida no h2, h3, a e p).
+       Os elementos filhos herdam a fonte do pai, então basta declarar uma vez */
+    font-family: "Barlow Condensed", sans-serif;
+    margin: 0; /* ALTERAÇÃO: tira a margem branca que o navegador coloca em volta da página */
+}
+
+/* ALTERAÇÃO: títulos passaram a usar a Bebas Neue (fonte de título) e os textos continuam
+   com a Barlow Condensed. É a combinação clássica de sites de academia */
+h1, h2, h3, h4 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: normal; /* a Bebas Neue já é grossa, o negrito padrão dos títulos deixaria borrada */
+    letter-spacing: 1px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;   /* fica por cima dos outros elementos */
+    background-color: rgba(0,0,0, 0.1);
+    display: flex;
+    justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
+    padding: 20px 5%;
+    align-items: center;
+    /* ALTERAÇÃO: o "animation-timeline: scroll()" foi removido porque não funciona no Firefox.
+       Agora o js/script.js coloca a classe "rolando" quando a página desce,
+       e o transition faz o fundo escurecer suavemente (em 0.3 segundos) */
+    transition: background-color 0.3s;
+}
+/* ALTERAÇÃO: classe colocada pelo JS quando a página é rolada (substitui o @keyframes header-some) */
+header.rolando {
+    background-color: rgba(0,0,0, 0.9);   /* fundo quase preto (90%) */
+}
+header img {
+    height: 40px;
+    width: auto;
+}
+header nav a {
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* ALTERAÇÃO: link do menu fica amarelo ao passar o mouse */
+header nav a:hover {
+    color: #FFC300;
+}
+/* ALTERAÇÃO: botão do menu hambúrguer, escondido no computador (só aparece no @media do celular) */
+#btnMenu {
+    display: none;
+    background: none;
+    border: none;
+    color: #FFC300;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 80px; /* ALTERAÇÃO: era 50px, pequeno demais para o título principal */
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: #FFC300;
+    margin-bottom: 30px;
+}
+.sub {
+    display: block; /* ALTERAÇÃO: o span ocupa a linha inteira, para poder ser centralizado */
+    text-align: center; /* ALTERAÇÃO: títulos das seções centralizados, antes cada seção tinha um alinhamento */
+    font-size: 24px;
+    color: gray; /* ALTERAÇÃO: subtítulo em cinza para não competir com o título amarelo */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.titulo{
+    text-align: center; /* ALTERAÇÃO: títulos das seções centralizados */
+    font-size: 60px;
+    text-transform: uppercase;   /* deixa tudo em maiúsculo */
+    color: #FFC300;
+    margin-top: 0;
+}
+.lema {
+    display: block;              /* fica sozinho na linha */
+    color: gray;
+    text-transform: uppercase;
+    letter-spacing: 2px;         /* espaço entre as letras */
+}
+
+/* ALTERAÇÃO: classe única para TODOS os botões do site. Substitui o .acao, o #chamada1,
+   o "#topo a" e o "#sobre article a:last-child", que tinham tamanhos e cantos diferentes */
+.botao {
+    display: inline-block;
+    background-color: #FFC300;
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s; /* a cor muda suavemente no hover */
+}
+.botao:hover {
+    background-color: white;
+}
+
+#topo{
+    padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
+    /* ALTERAÇÃO: o "../" foi adicionado porque o CSS agora está na pasta css/, então precisa sair dela para achar a pasta img/ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(../img/fotos-box/imagem1.jpeg);
+    background-size: cover;        /* a imagem cobre a seção toda */
+    background-position: center;   /* centraliza a imagem */
+    background-repeat: no-repeat;  /* não repete a imagem */
+    height: 100vh;                 /* seção com a altura da tela inteira */
+
+    text-align: center;
+}
+
+#sobre {
+    padding: 100px 5%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* ALTERAÇÃO: texto e carrossel ficam alinhados pelo meio */
+    background-color: black;
+}
+#sobre article p{
+    font-size: 20px;
+    color: gray;
+}
+/* ALTERAÇÃO: no Sobre o título fica à esquerda, porque o texto está em coluna ao lado do carrossel */
+#sobre .sub, #sobre .titulo {
+    text-align: left;
+}
+#sobre article {
+    width: 50%;
+    padding: 50px 50px;
+}
+
+/* ALTERAÇÃO: carrossel refeito, a troca das fotos agora é feita no js/carrossel.js
+   (antes era só CSS, com overflow-x e scroll-snap) */
+#carrossel{
+    width: 50%;
+    margin: 0;              /* a tag figure vem com margem por padrão, aqui tiramos */
+    position: relative;     /* serve de referência para posicionar os botões em cima da foto */
+}
+#moldura {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;  /* a imagem cobre o espaço definido, cortando o que passar */
+    border-radius: 20px;
+    display: block;     /* tira o espacinho que fica embaixo da imagem */
+}
+#carrossel button {
+    position: absolute;     /* o botão "flutua" em cima da foto */
+    top: 250px;             /* metade da altura da foto (500px / 2) */
+    margin-top: -25px;      /* sobe metade da altura do botão, para ficar bem no meio */
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;     /* deixa o botão redondo */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFC300;
+    font-size: 20px;
+    cursor: pointer;        /* mostra a "mãozinha" ao passar o mouse */
+}
+#carrossel button:hover {
+    background-color: #FFC300;
+    color: black;
+}
+#btnVoltar {
+    left: 15px;
+}
+#btnAvancar {
+    right: 15px;
+}
+#legenda {
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 10px;
+}
+
+/* ALTERAÇÃO: Modalidades e Planos: os cards (article) ficam lado a lado direto dentro da section.
+   O flex-wrap deixa quebrar a linha, e o subtítulo e o título ocupam 100% da largura
+   para ficarem sozinhos em cima dos cards (mesma ideia usada em #horarios) */
+#modalidades, #planos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#modalidades .sub, #modalidades .titulo,
+#planos .sub, #planos .titulo {
+    width: 100%;
+}
+
+/* ALTERAÇÃO: efeito de hover nos cards, o card sobe 5px quando o mouse passa por cima.
+   O transition faz o movimento ser suave em vez de "pular" */
+#modalidades article, #planos article {
+    transition: transform 0.3s;
+}
+#modalidades article:hover, #planos article:hover {
+    transform: translateY(-5px);
+}
+
+#modalidades {
+    padding: 100px 5%;
+    background-color: #111; /* ALTERAÇÃO: seções alternam entre preto e cinza escuro para separar visualmente */
+    color: white;
+}
+#modalidades article {
+    margin: 20px;
+    background-color: #1c1c1c;
+    border-radius: 40px;
+    flex: 1; /*Faz os cards ficarem do mesmo tamanho*/
+    overflow: hidden;   /* corta a foto nos cantos arredondados do card */
+}
+#modalidades article h3{
+    font-size: 34px;
+    color: #FFC300;
+    padding: 5px 20px;
+    margin: 10px 0 0 0;
+}
+#modalidades article p {
+    font-size: 17px;
+    color: gray;
+    padding: 5px 20px 20px 20px;
+}
+#modalidades article img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* ALTERAÇÃO: as duas fotos ficam com a mesma altura, cortando o excesso */
+}
+#planos {
+    padding: 100px 5%;
+    background-color: black;
+}
+#planos article {
+    margin: 10px;
+    background-color: #1c1c1c;
+    border-radius: 40px;
+    flex: 1; /*Faz os cards ficarem do mesmo tamanho*/
+    text-align: center;
+    padding-bottom: 20px;
+}
+#planos article h3 {
+    font-size: 34px;
+    color: #FFC300;
+    padding: 5px 20px ;
+    border: 1px solid #FFC300;
+    border-radius: 20px;
+    margin: 20px;
+}
+#planos article p {
+    font-size: 17px;
+    padding: 5px 20px;
+}
+#horarios {
+    padding: 100px 5%;
+    background-color: #111; /* ALTERAÇÃO: seções alternam entre preto e cinza escuro */
+}
+#horarios article{
+    display: flex;
+    flex-wrap:wrap;
+}
+/* ALTERAÇÃO: seletor trocado de h2 para h3, acompanhando a correção dos títulos no HTML */
+#horarios article h3{
+    width: 100%;
+    font-size: 34px;
+    color: #FFC300;
+    text-align: center;
+}
+#horarios article section{
+    flex-direction:column;
+    text-align: center;
+    margin: 10px auto;
+    width: 40%;
+    height: 200px;
+    border: 2px solid #FFC300;
+    border-radius: 20px;
+}
+#horarios article section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ALTERAÇÃO: estilo do rodapé (antes não tinha nenhum). 3 colunas lado a lado + linha de direitos */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 5% 20px 5%;
+    background-color: black;
+    border-top: 2px solid #FFC300;
+}
+footer section {
+    width: 30%;
+}
+footer img {
+    height: 60px;
+    width: auto;
+}
+footer p {
+    color: gray;
+}
+footer h4 {
+    font-size: 24px;
+    color: #FFC300;
+    margin-top: 0;
+}
+footer a {
+    display: block; /* cada link em uma linha */
+    color: gray;
+    text-decoration: none;
+    padding: 5px 0;
+}
+footer a:hover {
+    color: #FFC300;
+}
+#copyright {
+    width: 100%;           /* ocupa a linha toda, ficando embaixo das 3 colunas */
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+/* Tablet
+@media (max-width: 1024px) {
+     seu código aqui
+}
+
+ Smartphone
+@media (max-width: 480px) {
+    seu código aqui
+} */
+
+@media screen and (max-width: 600px) {
+    /* ALTERAÇÃO: removido o "body { background: yellow }", que era sobra de teste */
+
+    /* ALTERAÇÃO: o header não vira mais coluna (cobria metade da tela).
+       Agora fica logo na esquerda e botão ☰ na direita, e o menu abre por baixo */
+    #btnMenu {
+        display: block;
+    }
+    #chamada1 {
+        display: none; /* esconde o botão "Aula experimental" para caber no celular */
+    }
+    header nav {
+        display: none; /* menu escondido até clicar no ☰ */
+        position: absolute;
+        top: 100%;     /* começa logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    /* classe colocada pelo js/script.js quando clica no ☰ */
+    header nav.aberto {
+        display: flex;
+    }
+    header nav a {
+        padding: 10px;
+    }
+
+    /* ALTERAÇÃO: ajustes básicos para o celular (os ajustes completos ficam para a etapa de responsividade) */
+    h1 {
+        font-size: 50px;
+    }
+    .titulo {
+        font-size: 45px;
+    }
+    #sobre {
+        flex-direction: column; /* texto em cima, carrossel embaixo */
+    }
+    #sobre article, #carrossel {
+        width: 100%;
+        padding: 0;
+    }
+    #modalidades article, #planos article {
+        flex-basis: 100%; /* um card por linha */
+    }
+    #horarios article section {
+        width: 100%;
+    }
+    footer section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
