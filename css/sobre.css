@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* ALTERAÇÃO: arquivo criado. Estilos usados SÓ na página sobre.html */
+
+/* troca a foto do banner (a regra .banner fica no style.css) */
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem4.jpeg);
+}
+
+/* História: texto de um lado e foto do outro */
+#historia {
+    display: flex;
+    align-items: center;
+    padding: 100px 5%;
+}
+#historia article {
+    width: 50%;
+    padding-right: 50px;
+}
+#historia .sub, #historia .titulo {
+    text-align: left;
+}
+#historia p {
+    font-size: 20px;
+    color: gray;
+}
+#historia figure {
+    width: 50%;
+    margin: 0;
+}
+#historia img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Pilares: cards só com texto, com borda amarela em cima */
+#valores article {
+    padding: 20px 0;
+    border-top: 4px solid #FFC300;
+    text-align: center;
+}
+
+/* Equipe */
+#equipe article {
+    text-align: center;
+    max-width: 350px;
+    padding-bottom: 20px;
+}
+#equipe img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background-color: #333; /* fundo cinza enquanto a foto do coach não chega */
+}
+#equipe h3 {
+    margin-bottom: 0;
+}
+
+/* Localização */
+#localizacao {
+    padding: 100px 5%;
+    text-align: center;
+}
+#localizacao p {
+    color: gray;
+    font-size: 20px;
+}
+#localizacao iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #historia {
+        flex-direction: column;
+    }
+    #historia article, #historia figure {
+        width: 100%;
+        padding: 0;
+    }
+    #historia img {
+        height: 300px;
+    }
+}
