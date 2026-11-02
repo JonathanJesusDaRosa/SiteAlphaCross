@@ -1,4 +1,4 @@
-// ALTERAÇÃO: arquivo criado. Aqui ficam as funções usadas em TODAS as páginas do site (menu e header).
+// ALTERAÇÃO: arquivo criado. Aqui ficam as funções usadas em TODAS as páginas do site (menu, header e WhatsApp).
 // Não usamos window.onload aqui porque o carrossel.js já usa, e um apagaria o outro.
 // Como o <script> está no final do body, o HTML já carregou quando este código roda.
 
@@ -15,6 +15,23 @@ window.onscroll = MudarHeader
 function AbrirMenu(){
 
     menu.classList.toggle("aberto")
+}
+
+
+// ALTERAÇÃO: função que abre o WhatsApp do box com uma mensagem já escrita.
+// Fica aqui no script.js porque é usada por mais de uma página (contato.js e planos.js),
+// assim escrevemos uma vez só e reaproveitamos.
+const numeroWhatsApp = "5548999415643"   // 55 (Brasil) + 48 (DDD) + número, sem espaços
+
+function AbrirWhatsApp(texto){
+
+    // encodeURIComponent "traduz" o texto para o formato de link:
+    // espaço vira %20, acento vira código, quebra de linha vira %0A...
+    // sem isso, o link quebraria no primeiro espaço ou acento
+    var link = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texto)
+
+    // abre o link em uma nova aba ("_blank"), igual ao target="_blank" do HTML
+    window.open(link, "_blank")
 }
 
 
