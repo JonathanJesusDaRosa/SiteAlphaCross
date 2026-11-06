@@ -68,6 +68,29 @@
 }
 
 @media screen and (max-width: 600px) {
+    #lista, #experimental {
+        padding: 40px 5% 40px;
+    }
+
+    #lista .sub, #lista .titulo {
+        text-align: center;
+    }
+
+    #lista h3 {
+        text-align: center;
+    }
+
+    #lista .botao {
+        display: block;       /* ocupa a própria linha */
+        width: fit-content;   /* mas só do tamanho do conteúdo */
+        margin: 0 auto;       /* centraliza horizontalmente */
+        font-size: 24px;
+    }
+
+    #lista  p {
+        text-align: justify;
+    }
+
     /* no celular tudo vira coluna: foto em cima, texto embaixo */
     #lista article, #lista article:nth-child(even) {
         flex-direction: column;
@@ -79,4 +102,14 @@
     #lista article img {
         height: 300px;
     }
+
+
+    .sub {
+        font-size: 24px;
+    }
+    
+    .titulo {
+        font-size: 48px;
+    }
+
 }
