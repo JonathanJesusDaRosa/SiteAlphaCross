@@ -94,4 +94,23 @@ address {
         width: 100%;
         padding: 0;
     }
+
+    #contato .titulo {
+        text-align: center;
+    }
+
+    #informacoes .titulo {
+        margin-top: 50px;
+    }
+
+    #informacoes p {
+        color: white;
+    }
+
+    #formContato .botao {
+        display: block;       /* ocupa a própria linha */
+        width: fit-content;   /* mas só do tamanho do conteúdo */
+        margin: 0 auto;       /* centraliza horizontalmente */
+        font-size: 24px;
+    }
 }

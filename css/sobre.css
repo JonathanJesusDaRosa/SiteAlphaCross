@@ -82,6 +82,12 @@
 
 
 @media screen and (max-width: 600px) {
+
+    #historia, #valores, #equipe, #localizacao {
+        padding: 40px 5% 40px;
+    }
+
+
     #historia {
         flex-direction: column;
     }
@@ -92,4 +98,22 @@
     #historia img {
         height: 300px;
     }
+    
+    #historia .titulo, #historia .sub {
+        text-align: center;
+    }
+
+    #historia p {
+        text-align: justify;
+    }
+
+    .sub {
+        font-size: 27px;
+    }
+    
+    .titulo {
+        font-size: 51px;
+    }
+
+
 }

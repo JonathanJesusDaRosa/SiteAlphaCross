@@ -115,30 +115,6 @@
 }
 
 @media screen and (max-width: 600px) {
-    footer section p, footer section a {
-        font-size: 18px;
-    }
-    footer section h4 {
-        font-size: 24px;
-        margin: 10px 0px 8px
-    }
-    
-    footer section.navegacao {
-        width: 50%;
-    }
-
-    footer section.redes {
-        width: 50%;
-        display: row;
-        text-align: end;
-    }
-    footer section.redes img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 8px;
-    filter: invert(100%); /* inverte a cor da imagem de preto para branco */
-    }
     
     #sobre, #modalidades, #chamada, #depoimentos {
         padding: 40px 5% 40px;
