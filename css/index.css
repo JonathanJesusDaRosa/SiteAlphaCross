@@ -132,6 +132,13 @@
         display: row;
         text-align: end;
     }
+    footer section.redes img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: invert(100%); /* inverte a cor da imagem de preto para branco */
+    }
     
     #sobre, #modalidades, #chamada, #depoimentos {
         padding: 40px 5% 40px;
