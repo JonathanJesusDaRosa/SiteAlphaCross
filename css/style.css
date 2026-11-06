@@ -217,6 +217,13 @@ footer {
 footer section {
     width: 30%;
 }
+footer section.redes img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: invert(100%); /* inverte a cor da imagem de preto para branco */
+    }
 footer img {
     height: 60px;
     width: auto;
@@ -289,7 +296,7 @@ footer a:hover {
     }
     
     footer section.navegacao {
-        width: 50%;
+        width: 40%;
     }
 
     footer section.redes {
@@ -298,7 +305,7 @@ footer a:hover {
         text-align: end;
     }
     footer section.redes img {
-    width: 24px;
+    width: 10%;
     height: 24px;
     vertical-align: middle;
     margin-right: 8px;
