@@ -5,7 +5,7 @@
 var botaoVoltar = document.getElementById("btnVoltar")
 var botaoAvancar = document.getElementById("btnAvancar")
 var moldura = document.getElementById("moldura")
-var legenda = document.getElementById("legenda")
+
 
 var indice = 0   // posição da foto que está aparecendo (começa na primeira)
 
@@ -74,5 +74,4 @@ function MostrarFoto(){
 
     moldura.src = path+galeria.foto[indice]
     moldura.alt = galeria.descricao[indice]
-    legenda.innerText = galeria.descricao[indice]
 }

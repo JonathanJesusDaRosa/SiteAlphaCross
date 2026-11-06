@@ -115,18 +115,80 @@
 }
 
 @media screen and (max-width: 600px) {
+    footer section p, footer section a {
+        font-size: 18px;
+    }
+    footer section h4 {
+        font-size: 24px;
+        margin: 10px 0px 8px
+    }
+    
+    footer section.navegacao {
+        width: 50%;
+    }
+
+    footer section.redes {
+        width: 50%;
+        display: row;
+        text-align: end;
+    }
+    
+    #sobre, #modalidades, #chamada, #depoimentos {
+        padding: 40px 5% 40px;
+    }
+
+    
+    .sub {
+        font-size: 27px;
+    }
+    
+    .titulo {
+        font-size: 51px;
+    }
+
+    .card h3 {
+        font-size: 31px;
+        margin: 20px 0;
+    }
+    
+    .card p {
+        margin: 0px 0px 20px 0px;
+    }
+
     /* ALTERAÇÃO: no celular o Sobre vira coluna (texto em cima, carrossel embaixo) */
     #sobre {
         flex-direction: column;
     }
+
     #sobre article, #carrossel {
         width: 100%;
-        padding: 0;
+        padding: 10px 0;
     }
+
+    #sobre article p {
+        text-align: justify;
+    }
+    
+    #sobre .titulo, #sobre .sub {
+        text-align: center;
+    }
+
+    #sobre .botao {
+        display: block;       /* ocupa a própria linha */
+        width: fit-content;   /* mas só do tamanho do conteúdo */
+        margin: 0 auto;       /* centraliza horizontalmente */
+        font-size: 24px;
+    }
+
     #moldura {
         height: 300px;
     }
+    
     #carrossel button {
         top: 150px; /* metade da nova altura da foto (300px / 2) */
     }
+
+
+
+
 }

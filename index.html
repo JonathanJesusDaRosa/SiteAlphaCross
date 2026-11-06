@@ -19,7 +19,7 @@
              Quando mudar algo neles, tem que mudar em todos os arquivos .html -->
         <header>
             <!-- ALTERAÇÃO: href="" trocado por index.html (link vazio só recarregava a página) e alt preenchido para acessibilidade -->
-            <a href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
+            <a class="logo" href="index.html"><img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross"></a>
             <!-- ALTERAÇÃO: botão do menu hambúrguer (&#9776; é o símbolo ☰). Só aparece no celular, quem abre e fecha o menu é o js/script.js -->
             <button id="btnMenu">&#9776;</button>
             <!-- ALTERAÇÃO: os links agora levam para as páginas separadas (antes eram #sobre, #planos... na mesma página) -->
@@ -38,7 +38,7 @@
             <section id="topo">
                 <h1>Supere seus limites.<br>Conquiste sua melhor versão</h1>
                 <!-- ALTERAÇÃO: href="" trocado pela página de modalidades e adicionada a classe "botao" -->
-                <a class="botao" href="modalidades.html">Conheça nossas modalidades</a>
+                <a class="botao" href="https://wa.me/5548998155379" target="_blank">Agendar Aula Experimental</a>
             </section>
 
             <section id="sobre">
@@ -114,11 +114,11 @@
              Os article viraram section porque são partes do rodapé, e não conteúdos independentes -->
         <footer>
             <section>
-                <img src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross">
+                <img class="logo" src="img/logo-alpha-cross-branca.png" alt="Logo Alpha Cross">
                 <p>Mais do que um box, uma comunidade. Venha treinar com a gente e descubra do que você é capaz.</p>
                 <p>Cocal do Sul – SC</p>
             </section>
-            <section>
+            <section class="navegacao">
                 <nav>
                     <h4>Navegação</h4>
                     <!-- ALTERAÇÃO: links apontando para as páginas separadas -->
@@ -130,7 +130,7 @@
                     <a href="contato.html">Contato</a>
                 </nav>
             </section>
-            <section>
+            <section class="redes">
                 <h4>Siga o Alpha</h4>
                 <a href="https://www.instagram.com/alphacross_ct/" target="_blank">Instagram</a>
                 <!-- ALTERAÇÃO: adicionado target="_blank" no Facebook e no WhatsApp para abrirem em nova aba, igual ao Instagram -->

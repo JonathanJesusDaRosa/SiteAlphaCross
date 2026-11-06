@@ -37,7 +37,7 @@ header {
     background-color: rgba(0,0,0, 0.1);
     display: flex;
     justify-content: space-between;/* joga o 1º item na esquerda, o último na direita e o do meio no centro */
-    padding: 20px 5%;
+    padding: 16px 5%;
     align-items: center;
     /* ALTERAÇÃO: o "animation-timeline: scroll()" foi removido porque não funciona no Firefox.
        Agora o js/script.js coloca a classe "rolando" quando a página desce,
@@ -49,13 +49,13 @@ header.rolando {
     background-color: rgba(0,0,0, 0.9);   /* fundo quase preto (90%) */
 }
 header img {
-    height: 40px;
+    height: 65px;
     width: auto;
 }
 header nav a {
     text-decoration: none;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     padding-left: 15px;
     padding-right: 15px;
@@ -115,7 +115,7 @@ h1 {
     background-color: #FFC300;
     color: black;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: 1px;
     text-decoration: none;
     padding: 12px 30px;
@@ -182,7 +182,8 @@ h1 {
     padding: 0 20px;
 }
 .card p {
-    font-size: 17px;
+    text-align: justify;
+    font-size: 20px;
     color: gray;
     padding: 0 20px;
 }
@@ -282,14 +283,17 @@ footer a:hover {
     h1 {
         font-size: 50px;
     }
-    .titulo {
-        font-size: 45px;
-    }
-    .card {
-        flex-basis: 100%; /* um card por linha */
-    }
+
     footer section {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .titulo {
+        font-size: 45px;
+    }
+
+    .card {
+        flex-basis: 100%; /* um card por linha */
     }
 }
