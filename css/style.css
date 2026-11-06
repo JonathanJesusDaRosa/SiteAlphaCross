@@ -19,6 +19,8 @@ body{
        Os elementos filhos herdam a fonte do pai, então basta declarar uma vez */
     font-family: "Barlow Condensed", sans-serif;
     margin: 0; /* ALTERAÇÃO: tira a margem branca que o navegador coloca em volta da página */
+    touch-action: pan-x pan-y; /* permite rolar, bloqueia pinça e toque duplo para zoom */
+
 }
 
 /* ALTERAÇÃO: títulos passaram a usar a Bebas Neue (fonte de título) e os textos continuam

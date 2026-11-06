@@ -47,3 +47,6 @@ function MudarHeader(){
         header.classList.remove("rolando")
     }
 }
+
+// iOS: bloqueia o gesto de pinça
+document.addEventListener('gesturestart', (e) => e.preventDefault());
