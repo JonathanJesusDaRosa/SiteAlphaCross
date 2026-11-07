@@ -115,6 +115,10 @@
 }
 
 @media screen and (max-width: 600px) {
+
+    #topo h1 {
+        font-size: 40px;
+    }
     
     #sobre, #modalidades, #chamada, #depoimentos {
         padding: 40px 5% 40px;

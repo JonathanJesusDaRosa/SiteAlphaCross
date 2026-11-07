@@ -51,7 +51,7 @@ header.rolando {
     background-color: rgba(0,0,0, 0.9);   /* fundo quase preto (90%) */
 }
 header img {
-    height: 65px;
+    height: 52px;
     width: auto;
 }
 header nav a {
@@ -204,7 +204,7 @@ h1 {
 }
 .banner p {
     font-size: 22px;
-    color: #ccc;
+    color: gray;
 }
 
 /* ALTERAÇÃO: estilo do rodapé (antes não tinha nenhum). 3 colunas lado a lado + linha de direitos */
@@ -227,7 +227,7 @@ footer section.redes img {
     filter: invert(100%); /* inverte a cor da imagem de preto para branco */
     }
 footer img {
-    height: 60px;
+    height: 52px;
     width: auto;
 }
 footer p {
