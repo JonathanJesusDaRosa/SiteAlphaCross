@@ -193,7 +193,7 @@ h1 {
 /* ALTERAÇÃO: banner do topo das páginas internas (Sobre, Modalidades, Planos...).
    É uma versão menor do #topo da página inicial. Cada página troca a foto no seu próprio CSS */
 .banner {
-    padding: 180px 5% 80px 5%;
+    padding: 300px 5% 80px 5%;
     text-align: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem2.jpeg);
     background-size: cover;
