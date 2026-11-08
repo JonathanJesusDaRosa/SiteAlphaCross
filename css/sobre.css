@@ -87,9 +87,9 @@
         padding: 40px 5% 40px;
     }
 
-
     #historia {
         flex-direction: column;
+        margin-top: 40px;
     }
     #historia article, #historia figure {
         width: 100%;
@@ -107,13 +107,12 @@
         text-align: justify;
     }
 
-    .sub {
-        font-size: 27px;
-    }
-    
     .titulo {
-        font-size: 51px;
+        font-size: 48px;
     }
 
+    .sub {
+        font-size: 20px;
+    }
 
 }
