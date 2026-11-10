@@ -120,17 +120,7 @@
         padding: 40px 5% 40px;
     }
 
-    
-    .sub {
-        font-size: 27px;
-    }
-    
-    .titulo {
-        font-size: 51px;
-    }
-
     .card h3 {
-        font-size: 31px;
         margin: 20px 0;
     }
     
@@ -170,8 +160,5 @@
     #carrossel button {
         top: 150px; /* metade da nova altura da foto (300px / 2) */
     }
-
-
-
 
 }

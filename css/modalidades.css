@@ -103,13 +103,12 @@
         height: 300px;
     }
 
+    #experimental a {
+        font-size: 23px;
+    }
 
     .sub {
-        font-size: 24px;
+        margin-top: 10px;
     }
     
-    .titulo {
-        font-size: 48px;
-    }
-
 }

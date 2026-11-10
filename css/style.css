@@ -51,7 +51,7 @@ header.rolando {
     background-color: rgba(0,0,0, 0.9);   /* fundo quase preto (90%) */
 }
 header img {
-    height: 65px;
+    height: 52px;
     width: auto;
 }
 header nav a {
@@ -193,7 +193,7 @@ h1 {
 /* ALTERAÇÃO: banner do topo das páginas internas (Sobre, Modalidades, Planos...).
    É uma versão menor do #topo da página inicial. Cada página troca a foto no seu próprio CSS */
 .banner {
-    padding: 180px 5% 80px 5%;
+    padding: 300px 5% 80px 5%;
     text-align: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem2.jpeg);
     background-size: cover;
@@ -204,7 +204,7 @@ h1 {
 }
 .banner p {
     font-size: 22px;
-    color: #ccc;
+    color: gray;
 }
 
 /* ALTERAÇÃO: estilo do rodapé (antes não tinha nenhum). 3 colunas lado a lado + linha de direitos */
@@ -227,7 +227,7 @@ footer section.redes img {
     filter: invert(100%); /* inverte a cor da imagem de preto para branco */
     }
 footer img {
-    height: 60px;
+    height: 52px;
     width: auto;
 }
 footer p {
@@ -314,21 +314,39 @@ footer a:hover {
     filter: invert(100%); /* inverte a cor da imagem de preto para branco */
     }
 
-    /* ALTERAÇÃO: removido o "body { background: yellow }", que era sobra de teste */
-    h1 {
-        font-size: 50px;
-    }
-
     footer section {
         width: 100%;
         margin-bottom: 20px;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 30px;
+    }
+
+    .sub {
+        font-size: 20px;
+    }
+    
     .titulo {
-        font-size: 45px;
+        font-size: 42px;
     }
 
     .card {
         flex-basis: 100%; /* um card por linha */
     }
+
+    #topo h1 { 
+        font-size: 36px;
+        margin: 90px 6% 55px 6%;
+    }
+
+    .banner h1 {
+        font-size: 46px;
+}
+
+    #topo a {
+        font-size: 22px;
+    }
+
+    
 }
