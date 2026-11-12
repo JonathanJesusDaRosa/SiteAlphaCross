@@ -10,12 +10,12 @@ var moldura = document.getElementById("moldura")
 var indice = 0   // posição da foto que está aparecendo (começa na primeira)
 
 var galeria = {
-    foto: ["imagem3.jpeg","imagem1.1.jpg","imagem2.jpeg","imagem4.jpeg","imagem5.jpeg"],
-    descricao: ["Treino em grupo","Nossa estrutura","Comunidade Alpha","Superação","Evolução"]
+    foto: ["imagem-carrossel-01.jpg","imagem-carrossel-02.jpg","imagem-carrossel-03.jpg"],
+    descricao: ["Treino em grupo","Nossa estrutura","Comunidade Alpha"]
 }
 
 const tempoEntreFotos = 5000   // 5000 milissegundos = 5 segundos
-const path = "img/fotos-box/"
+const path = "img/fotos-box/fotos-carrossel/"   // caminho para a pasta das fotos do carrossel
 var temporizador
 
 window.onload = Inicio
