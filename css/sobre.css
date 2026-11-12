@@ -4,7 +4,7 @@
 
 /* troca a foto do banner (a regra .banner fica no style.css) */
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem4.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), black), url(../img/fotos-box/imagem-nova-02.jpg);
 }
 
 /* História: texto de um lado e foto do outro */

@@ -6,7 +6,7 @@
 #topo{
     padding-top: 200px;   /* empurra só o texto, a foto começa lá em cima */
     /* ALTERAÇÃO: o "../" foi adicionado porque o CSS agora está na pasta css/, então precisa sair dela para achar a pasta img/ */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(../img/fotos-box/imagem1.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1)), url(../img/fotos-box/imagem-nova-01.jpg);
     background-size: cover;        /* a imagem cobre a seção toda */
     background-position: center;   /* centraliza a imagem */
     background-repeat: no-repeat;  /* não repete a imagem */
