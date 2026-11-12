@@ -1,6 +1,6 @@
 # Alpha Cross CT
 
-Site do box de CrossFit **Alpha Cross**, em Cocal do Sul – SC.
+Site do box de Crosstraining **Alpha Cross**, em Cocal do Sul – SC.
 
 🔗 **Acesse o site:** https://jonathanjesusdarosa.github.io/SiteAlphaCross/
 
