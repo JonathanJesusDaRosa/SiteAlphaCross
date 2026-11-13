@@ -2,7 +2,7 @@
 
 Site do box de Crosstraining **Alpha Cross**, em Cocal do Sul – SC.
 
-🔗 **Acesse o site:** https://jonathanjesusdarosa.github.io/SiteAlphaCross/
+🔗 **Acesse o site:** https://alphacross.com.br/
 
 ## Sobre o projeto
 
@@ -65,7 +65,3 @@ SiteAlphaCross/
 └── img/                 logos e fotos
 ```
 
-## Como abrir
-
-Não precisa instalar nada: basta baixar o projeto e abrir o arquivo `index.html` no navegador,
-ou acessar o link do site acima.
